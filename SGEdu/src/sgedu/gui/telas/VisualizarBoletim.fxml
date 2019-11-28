@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sgedu.gui.controllers.VisualizarBoletimController">
+   <children>
+      <Text layoutX="195.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teste de Boletim">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Text>
+      <ListView fx:id="lvBimestre1" layoutX="240.0" layoutY="108.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
