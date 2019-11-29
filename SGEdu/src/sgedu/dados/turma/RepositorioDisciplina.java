@@ -30,6 +30,7 @@ public class RepositorioDisciplina implements IRepositorioDisciplina {
 			ObjectInputStream is = new ObjectInputStream(file);
 			disciplinas = (ArrayList<Disciplina>) is.readObject();
 			is.close();
+			salvarArquivoDisciplina();
 		} catch(IOException | ClassNotFoundException e) {
 			salvarArquivoDisciplina();
 		}

@@ -1,6 +1,5 @@
 package sgedu.dados.usuarios;
 
-import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -36,6 +35,7 @@ public class RepositorioCoordenador implements IRepositorioCoordenador {
 			ObjectInputStream is = new ObjectInputStream(file);
 			coordenadores = (ArrayList<Coordenador>) is.readObject();
 			is.close();
+			salvarArquivoCoordenador();
 		} catch(IOException | ClassNotFoundException e) {
 			salvarArquivoCoordenador();
 		}
@@ -92,6 +92,5 @@ public class RepositorioCoordenador implements IRepositorioCoordenador {
 		coordenador.setNome(c.getNome());
 		salvarArquivoCoordenador();
 	}
-	
-	
+
 }

@@ -1,5 +1,10 @@
 package sgedu.negocios.entidade.diario;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import sgedu.dados.diario.IRepositorioAvaliacao;
+import sgedu.dados.diario.IRepositorioFrequencia;
+import sgedu.dados.turma.IRepositorioDisciplina;
 import sgedu.negocios.entidade.usuarios.Aluno;
 
 /**
@@ -11,73 +16,38 @@ public class Boletim {
 
     private Aluno aluno;
     private int ano;
-    private Frequencia frequencias;
-    private Avaliacao avaliacoes;
-    private String situacao;
+    private ArrayList<DisciplinaBoletim> disciplinasBoletim;
     
-    public Boletim(Aluno aluno, Frequencia f, Avaliacao a) {
+    public Boletim(Aluno aluno) {
     	this.aluno = aluno;
-    	this.frequencias = f;
-    	this.avaliacoes = a;
-    	this.ano = a.getAno();
+    	this.ano = pegarAno();
+    	this.disciplinasBoletim = new ArrayList<DisciplinaBoletim>();
+    	
    }
    
-    public String situacaoAluno() {
-    	if(avaliacoes.getMediaFinal() >= 7.0 && frequencias.getFaltasTotal() < frequencias.getDisciplina().getQuantAulasBimestre()) {
-    		this.situacao = "APROVADO";
-    		return situacao;
-    	}
-    	this.situacao = "REPROVADO";
-    	return situacao;
+    public int pegarAno() {
+    	Calendar cal = Calendar.getInstance();
+        int ano = cal.get(Calendar.YEAR);
+        return ano;
     }
-
-	public Aluno getAluno() {
-		return aluno;
-	}
-
-	public void setAluno(Aluno aluno) {
-		this.aluno = aluno;
-	}
-
-	public int getAno() {
-		return ano;
-	}
-
-	public void setAno(int ano) {
-		this.ano = ano;
-	}
-
-	public Frequencia getFrequencias() {
-		return frequencias;
-	}
-
-	public void setFrequencias(Frequencia frequencias) {
-		this.frequencias = frequencias;
-	}
-
-	public Avaliacao getAvaliacoes() {
-		return avaliacoes;
-	}
-
-	public void setAvaliacoes(Avaliacao avaliacoes) {
-		this.avaliacoes = avaliacoes;
-	}
-
-	public String getSituacao() {
-		return situacao;
-	}
-
-	public void setSituacao(String situacao) {
-		this.situacao = situacao;
-	}
+    
+    public int getAno() {
+    	return ano;
+    }
+	
+    public void addDisciplinasBoletim(IRepositorioDisciplina repositorioDisciplina, IRepositorioFrequencia repositorioFrequencia, IRepositorioAvaliacao repositorioAvaliacao) {
+    	for(int i=0; i<repositorioDisciplina.getDisciplinas().size(); i++) {
+    		Frequencia f = repositorioFrequencia.buscaFrequenciaAluno(aluno, repositorioDisciplina.getDisciplinas().get(i), ano);
+    		Avaliacao a = repositorioAvaliacao.buscaAvaliacaoAluno(aluno, repositorioDisciplina.getDisciplinas().get(i), ano);
+    		disciplinasBoletim.add(new DisciplinaBoletim(f, a));
+    	}
+    }
 
 	@Override
 	public String toString() {
-		return "BOLETIM " + ano + "\n" + " ALUNO(A): " + aluno 
-				+ "\n" + " FALTAS E FREQUENCIAS: " + frequencias 
-				+ "\n" + " AVALIACOES: " + avaliacoes 
-				+ "\n" + " SITUACAO: " + situacao;
+		return "Boletim " + ano + " ALUNO: " + aluno + "\n"
+				+ disciplinasBoletim.toString();
 	}
-   
-	
+    
+    
 }

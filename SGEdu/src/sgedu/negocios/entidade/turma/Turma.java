@@ -73,7 +73,7 @@ public class Turma implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Turma " + nome + ano + "\n" + 
+		return "TURMA " + nome + ano + "\n" + 
 				" DISCIPLINAS: " + disciplinas + "\n" + 
 				" ALUNOS: " + alunos;
 	}

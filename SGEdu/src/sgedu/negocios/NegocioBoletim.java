@@ -1,32 +1,21 @@
 package sgedu.negocios;
 
-import java.util.ArrayList;
-
 import sgedu.dados.diario.IRepositorioAvaliacao;
 import sgedu.dados.diario.IRepositorioFrequencia;
-import sgedu.negocios.entidade.diario.Avaliacao;
-import sgedu.negocios.entidade.diario.Frequencia;
-import sgedu.negocios.entidade.usuarios.Aluno;
+import sgedu.dados.turma.IRepositorioDisciplina;
 
 public class NegocioBoletim {
 	
-	ArrayList<Frequencia> frequencias;
-    ArrayList<Avaliacao> avaliacoes;
-    
-    private IRepositorioFrequencia repositorioFrequencia;
-    private IRepositorioAvaliacao repositorioAvaliacao;
-	
-    public NegocioBoletim(IRepositorioFrequencia repositorioFrequencia, IRepositorioAvaliacao repositorioAvaliacao) {
-    	this.repositorioAvaliacao = repositorioAvaliacao;
-    	this.repositorioFrequencia = repositorioFrequencia;
-    	this.frequencias = new ArrayList<Frequencia>();
-    	this.avaliacoes = new ArrayList<Avaliacao>();
+    private IRepositorioFrequencia rFrequencia;
+    private IRepositorioAvaliacao rAvaliacao;
+    private IRepositorioDisciplina rDisciplina;
+
+    public NegocioBoletim(IRepositorioDisciplina rDisciplina, IRepositorioFrequencia rFrequencia, IRepositorioAvaliacao rAvaliacao) {
+    	this.rAvaliacao = rAvaliacao;
+    	this.rDisciplina = rDisciplina;
+    	this.rFrequencia = rFrequencia;
     }
     
-    public ArrayList addFrequencia(Aluno aluno) {
-    	repositorioFrequencia.buscaFrequenciaAluno(aluno, bimestre, disciplina)
-    }
-  
     
 	
 

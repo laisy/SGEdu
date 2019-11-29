@@ -1,6 +1,7 @@
 package sgedu.dados.usuarios;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import sgedu.negocios.entidade.usuarios.Responsavel;
 
@@ -23,5 +24,7 @@ public interface IRepositorioResponsavel {
 	void alterarSenhaResponsavel(Responsavel responsavel) throws IOException;
 	
 	void alterarNomeResponsavel(Responsavel responsavel) throws IOException;
+	
+	ArrayList<Responsavel> getResponsaveis();
 	
 }

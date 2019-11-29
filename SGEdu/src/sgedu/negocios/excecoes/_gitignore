@@ -1,0 +1,9 @@
+/BoletimNaoEncontradoException.class
+/UsuarioJaCadastradoException.class
+/UsuarioNaoEncontradoException.class
+/TurmaNaoEncontradaException.class
+/TurmaJaCriadaException.class
+/DisciplinaNaoEncontradaException.class
+/DisciplinaJaCadastradaException.class
+/NotificacaoNaoEncontradaException.class
+/NotificacaoJaAdicionadaException.class

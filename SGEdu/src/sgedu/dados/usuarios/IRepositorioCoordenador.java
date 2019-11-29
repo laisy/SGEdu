@@ -1,6 +1,8 @@
 package sgedu.dados.usuarios;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import sgedu.negocios.entidade.usuarios.Coordenador;
 
 public interface IRepositorioCoordenador {
@@ -23,5 +25,6 @@ public interface IRepositorioCoordenador {
 	
 	void alterarNomeCoordenador(Coordenador coordenador) throws IOException;
 	
+	ArrayList<Coordenador> getCoordenadores();
 
 }

@@ -38,5 +38,11 @@ public class Professor extends Usuario implements Serializable {
 		turmas.add(turma);
 	}
 
+	@Override
+	public String toString() {
+		return "LOGIN: "+super.getLogin()+" \n    NOME: "+super.getNome() + "\n" +
+				" DISCIPLINA: " + disciplina.getNome();
+	}
+	
 	
 }

@@ -32,6 +32,7 @@ public class RepositorioAvaliacao implements IRepositorioAvaliacao{
 			ObjectInputStream is = new ObjectInputStream(file);
 			avaliacoes = (ArrayList<Avaliacao>) is.readObject();
 			is.close();
+			salvarArquivoAvaliacao();
 		} catch(IOException | ClassNotFoundException e) {
 			salvarArquivoAvaliacao();
 		}

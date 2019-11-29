@@ -47,7 +47,14 @@ public class Notificacao implements Serializable{
 	}
 	
 	public void setId(int id) {
-		this.id = RepositorioNotificacoes.contadorNotificacao;
+		this.id = id;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Notificacao" + id + "\n" +
+				" REMETENTE: " + nomeRemetente + "\n" +
+				" DESTINATARIO: " + nomeDestinatario + "\n" +
+				" MENSAGEM: " + notificacao;
+	}
 }

@@ -16,5 +16,10 @@ public class Coordenador extends Usuario implements Serializable{
         super(login,nome, senha);
     }
     
+    @Override
+	public String toString() {
+		return "LOGIN: "+super.getLogin()+" \n    NOME: "+super.getNome();
+	}
+
 
 }

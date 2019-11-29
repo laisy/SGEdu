@@ -30,6 +30,7 @@ public class RepositorioTurma implements IRepositorioTurma{
 			ObjectInputStream is = new ObjectInputStream(file);
 			turmas = (ArrayList<Turma>) is.readObject();
 			is.close();
+			salvarArquivoTurma();
 		} catch(IOException | ClassNotFoundException e) {
 			salvarArquivoTurma();
 		}

@@ -1,6 +1,7 @@
 package sgedu.dados.usuarios;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import sgedu.negocios.entidade.usuarios.Professor;
 
@@ -23,6 +24,8 @@ public interface IRepositorioProfessor {
 	void alterarSenhaProfessor(Professor professor) throws IOException;
 	
 	void alterarNomeProfessor(Professor professor) throws IOException;
+	
+	ArrayList<Professor> getProfessores();
 	
 
 }

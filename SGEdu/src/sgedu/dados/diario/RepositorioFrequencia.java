@@ -37,6 +37,7 @@ public class RepositorioFrequencia implements IRepositorioFrequencia{
 			ObjectInputStream is = new ObjectInputStream(file);
 			frequencias = (ArrayList<Frequencia>) is.readObject();
 			is.close();
+			salvarArquivoFrequencia();
 		} catch(IOException | ClassNotFoundException e) {
 			salvarArquivoFrequencia();
 		}
@@ -66,6 +67,7 @@ public class RepositorioFrequencia implements IRepositorioFrequencia{
 		return null;
 	}
 	
+
 	public void removerFrequencia(Aluno aluno, Disciplina disciplina, int ano) throws IOException {
 		Frequencia f = buscaFrequenciaAluno(aluno, disciplina, ano);
 		frequencias.remove(f);
