@@ -12,9 +12,11 @@ import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Aluno;
 
 /**
+ * Class RepositorioFrequencia
+ * @author laisy
  * Repositorio Frequencia tem como objetivo guardar todos os objetos frequencia, fazer buscas dentro do repositório
  * e remover, caso precise. Os objetos frequencia são armazenados em um ArrayList e um arquivo binário.
- * @author laisy
+ * 
  */
 public class RepositorioFrequencia implements IRepositorioFrequencia{
 	

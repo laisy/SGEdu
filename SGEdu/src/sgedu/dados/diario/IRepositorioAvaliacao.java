@@ -6,9 +6,11 @@ import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Aluno;
 
 /**
+ * Interface IRepositorioAvaliacao
+ * @author laisy
  * Abaixo temos a interface a ser implementada no repositório de Avaliacao, 
  * com suas assinaturas de métodos.
- * @author laisy
+ * 
  */
 public interface IRepositorioAvaliacao {
 	

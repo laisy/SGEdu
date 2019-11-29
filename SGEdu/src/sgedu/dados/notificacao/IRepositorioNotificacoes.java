@@ -6,9 +6,11 @@ import sgedu.negocios.entidade.notificacao.Notificacao;
 
 
 /**
+ * Interface IRepositorioNotificacoes
+ * @author laisy
  * Abaixo temos a interface a ser implementada no repositório de Notificacaos, 
  * com suas assinaturas de métodos.
- * @author laisy
+ * 
  */
 
 public interface IRepositorioNotificacoes {

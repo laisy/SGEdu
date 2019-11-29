@@ -9,9 +9,11 @@ import java.util.ArrayList;
 import sgedu.negocios.entidade.usuarios.Coordenador;
 
 /**
+ * Class RepositorioCoordenador
+ * @author laisy
  * Abaixo temos a classe para o repositório de Coordenador que serve para armazenar em um arraylist para salvar em um arquivo binário
  * todos os dados dos Coordenadores adicionados no sistema; e a implementação da interface IRepositorioCoordenador.
- * @author laisy
+ * 
  */
 
 public class RepositorioCoordenador implements IRepositorioCoordenador {

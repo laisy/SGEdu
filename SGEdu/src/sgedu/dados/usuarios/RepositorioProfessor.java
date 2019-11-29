@@ -10,9 +10,11 @@ import java.util.ArrayList;
 import sgedu.negocios.entidade.usuarios.Professor;
 
 /**
+ * Class RepositorioProfessor
+ * @author laisy
  * Abaixo temos a classe para o repositório de Professor que serve para armazenar em um arraylist para salvar em um arquivo binário
  * todos os dados dos Professores adicionados no sistema; e a implementação da interface IRepositorioProfessor.
- * @author laisy
+ * 
  */
 public class RepositorioProfessor implements IRepositorioProfessor{
 	ArrayList <Professor> professores;

@@ -9,9 +9,11 @@ import java.util.ArrayList;
 import sgedu.negocios.entidade.notificacao.Notificacao;
 
 /**
+ * Class RepositorioNotificacoes
+ * @author laisy
  * Abaixo temos a classe para o repositório de Notificacao que serve para armazenar em um arraylist para salvar em um arquivo binário
  * todos os dados das Notificacoes criadas no sistema; e a implementação da interface IRepositorioNotificacoes.
- * @author laisy
+ * 
  */
 
 public class RepositorioNotificacoes implements IRepositorioNotificacoes{

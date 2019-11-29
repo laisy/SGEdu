@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import sgedu.negocios.entidade.usuarios.Aluno;
 
 /**
+ * Interface IRepositorioAluno
+ * @author laisy
  * Abaixo temos a interface a ser implementada no repositório de Aluno, 
  * com suas assinaturas de métodos.
- * @author laisy
+ * 
  */
 public interface IRepositorioAluno {
 	

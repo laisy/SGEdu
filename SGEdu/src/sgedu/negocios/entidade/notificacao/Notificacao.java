@@ -1,5 +1,13 @@
 package sgedu.negocios.entidade.notificacao;
 
+/**
+ * Class Notificacao
+ * @author Allysson
+ * Classe Notificacao cria objetos do tipo Notificacao, seus atributos e metodos.
+ * Uma notificacao é uma mensagem que possui um id para diferenciar as notificacoes, 
+ * um rementente e um destinatario.
+ */
+
 import java.io.Serializable;
 
 import sgedu.dados.notificacao.RepositorioNotificacoes;

@@ -11,9 +11,11 @@ import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Aluno;
 
 /**
+ * Class RepositorioAvaliacao 
+ * @author laisy
  * Abaixo temos a classe para o repositório de Avaliacao que serve para armazenar em um arraylist para salvar em um arquivo binário
  * todos os dados das Avaliacoes adicionadas no sistema; e a implementação da interface IRepositórioAvaliacao.
- * @author laisy
+ * 
  */
 
 public class RepositorioAvaliacao implements IRepositorioAvaliacao{

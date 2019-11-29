@@ -5,10 +5,13 @@ import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Aluno;
 
 /**
- * Classe Frequencia representa a frequencia do aluno nas aulas, a partir da quantidade de faltas e 
- * quantidades de aula por disciplina. A Frequencia pertence a um aluno, de uma disciplina em um bimestre
- * contabilizada por datas.
+ * Class Frequencia
  * @author laisy
+ * Classe Frequencia representa a frequencia do aluno nas aulas, a partir da quantidade de faltas e 
+ * quantidades de aula da disciplina.
+ * O objeto frequencia possui um aluno, uma disciplina, faltas e frequencias dos bimestres representado como:
+ * falta1 = faltas do 1º bimestre, frequencia1 = frequencias do 1º bimestre. Possui também a quantidade de faltas anual
+ * e de frequencia total anual.
  */
 public class Frequencia{
 

@@ -6,7 +6,9 @@ import sgedu.dados.usuarios.RepositorioCoordenador;
 
 /**
  * Class Coordenador
- * @author Allysson & Lucas Leonardo
+ * @author Allysson
+ * Classe Coordenador cria objetos do tipo Coordenador, seus metodos e atributos.
+ * Um coordenador é um Usuário, tem acesso a todos as funcionalidades do sistema.
  */
 
 public class Coordenador extends Usuario implements Serializable{

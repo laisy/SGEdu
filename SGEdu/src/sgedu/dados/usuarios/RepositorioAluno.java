@@ -10,9 +10,11 @@ import java.util.ArrayList;
 import sgedu.negocios.entidade.usuarios.Aluno;
 
 /**
+ * Class RepositorioAluno
+ * @author laisy
  * Abaixo temos a classe para o repositório de Aluno que serve para armazenar em um arraylist para salvar em um arquivo binário
  * todos os dados dos Alunos matriculados no sistema; e a implementação da interface IRepositórioAluno.
- * @author laisy
+ * 
  */
 
 public class RepositorioAluno implements IRepositorioAluno{

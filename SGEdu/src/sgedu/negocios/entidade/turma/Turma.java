@@ -8,6 +8,10 @@ import sgedu.negocios.entidade.usuarios.Aluno;
 /**
  * Class Turma
  * @author Laisy
+ * Classe Turma cria objetos do tipo turma, seus atributos e metodos.
+ * Uma Turma é formada pelo seu nome (ex "3°ano"), o ano, por um conjunto de Alunos que estudam nessa turma 
+ * e um conjunto de disciplinas que são dadas nessa turma.
+ * 
  */
 
 public class Turma implements Serializable {

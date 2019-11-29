@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import sgedu.negocios.entidade.turma.Turma;
 
 /**
+ * Interface IRepositorioTurma
+ * @author laisy
  * Abaixo temos a interface a ser implementada no repositório de Turma, 
  * com suas assinaturas de métodos.
- * @author laisy
+ * 
  */
 
 public interface IRepositorioTurma {

@@ -9,9 +9,11 @@ import java.util.ArrayList;
 import sgedu.negocios.entidade.turma.Disciplina;
 
 /**
+ * class RepositorioDisciplina
+ * @author laisy
  * Abaixo temos a classe para o repositório de Disciplina que serve para armazenar em um arraylist para salvar em um arquivo binário
  * todos os dados das Disciplinas adicionadas no sistema; e a implementação da interface IRepositórioDisciplina.
- * @author laisy
+ * 
  */
 
 public class RepositorioDisciplina implements IRepositorioDisciplina {

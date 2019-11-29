@@ -6,9 +6,11 @@ import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Aluno;
 
 /**
+ * interface IRepositorioFrequencia
+ * @author laisy
  * Abaixo temos a interface a ser implementada no repositório de Frequencia, 
  * com suas assinaturas de métodos.
- * @author laisy
+ * 
  */
 
 public interface IRepositorioFrequencia {

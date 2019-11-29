@@ -9,7 +9,10 @@ import sgedu.negocios.entidade.turma.Turma;
 
 /**
  * Class Professor
- * @author 
+ * @author Allysson
+ * Classe para criação de objetos do tipo Professor, seus atributos e métodos.
+ * Professor é um Usuário, tem acesso restrito do sistema.
+ * Professor leciona uma disciplina e dá aula em n turmas.
  */
 
 public class Professor extends Usuario implements Serializable {

@@ -3,9 +3,12 @@ package sgedu.negocios.entidade.usuarios;
 import java.io.Serializable;
 
 /**
- * Superclass Usuario
- * @author Allysson & Lucas Leonardo
+ * Class Usuario
+ * @author Allysson
+ * Classe modelo para os objetos do tipo "Usuario"; seus atributos e seu construtor.
+ * Usuarios sao as pessoas que tem acesso ao sistema.
  */
+
 public abstract class Usuario implements Serializable {
     private String nome;
     private String senha;
@@ -29,6 +32,11 @@ public abstract class Usuario implements Serializable {
     
     public String getSenha() { return senha; }
     
+    /**
+     * Metodo pra verificar se a senha esta correta ou nao
+     * @param senha do usuario
+     * @return true para senha correta, false se errada
+     */
     public boolean verificaSenha(String senha) {
         if (this.senha.equals(senha)) {
             return true;

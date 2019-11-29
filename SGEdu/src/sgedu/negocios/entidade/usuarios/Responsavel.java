@@ -7,7 +7,10 @@ import sgedu.dados.usuarios.RepositorioResponsavel;;
 
 /**
  * Class Responsavel
- * @author Allysson & Lucas Leonardo
+ * @author Allysson
+ * Classe para criação de objetos do tipo Responsavel, seus atributos e metodos.
+ * Responsavel é um Usuário, e é um responsavel pelo aluno (ex mãe/pai).
+ * Responsavel tem acesso restrito do sistema. 
  */
 
 public class Responsavel extends Usuario implements Serializable{
@@ -23,5 +26,11 @@ public class Responsavel extends Usuario implements Serializable{
         alunos.add(aluno);
     }
 
+	@Override
+	public String toString() {
+		return "LOGIN: "+super.getLogin()+" \n    NOME: "+super.getNome() + " ALUNOS: " + alunos;
+	}
+
+    
 
 }

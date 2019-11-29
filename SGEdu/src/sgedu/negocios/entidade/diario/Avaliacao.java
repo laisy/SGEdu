@@ -4,6 +4,13 @@ import java.util.Calendar;
 import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Aluno;
 
+/**
+ * Class Avaliacao
+ * @author laisy
+ * A classe Avaliacao cria objetos do tipo Avaliacao, seus atributos e métodos.
+ * Avaliacao um aluno, uma disciplina, e uma nota para cada bimestre, escrita da forma nota1 = nota 1° Bimestre
+ * e assim por diante, e também a media final de todas as notas.
+ */
 public class Avaliacao{
 	
 	private Aluno aluno;

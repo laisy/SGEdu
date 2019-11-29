@@ -9,7 +9,10 @@ import sgedu.negocios.entidade.usuarios.Aluno;
 
 /**
  * Class Boletim
- * 
+ * @author laisy
+ * Classe Boletim cria objetos do tipo Boletim, seus atributos e metodos.
+ * Boletim possui um aluno, um ano e um ArrayList de Disciplina Boletim, que nada mais que
+ * um objeto frequencia e um objeto avaliacao referente a uma disciplina. 
  */
 
 public class Boletim {
@@ -35,6 +38,13 @@ public class Boletim {
     	return ano;
     }
 	
+    /**
+     * Metodo que adiciona DisciplinasBoletim ao ArrayList do Boletim
+     * Neste método é buscado as disciplinas existentes,para assim buscar a Frequencia e a Avaliacao dela que pentence ao aluno do boletim.
+     * @param repositorioDisciplina para pegar as disciplinas e fazer o loop 
+     * @param repositorioFrequencia para encontrar as Frequencias do Aluno
+     * @param repositorioAvaliacao para buscar as Avaliacoes do Aluno
+     */
     public void addDisciplinasBoletim(IRepositorioDisciplina repositorioDisciplina, IRepositorioFrequencia repositorioFrequencia, IRepositorioAvaliacao repositorioAvaliacao) {
     	for(int i=0; i<repositorioDisciplina.getDisciplinas().size(); i++) {
     		Frequencia f = repositorioFrequencia.buscaFrequenciaAluno(aluno, repositorioDisciplina.getDisciplinas().get(i), ano);

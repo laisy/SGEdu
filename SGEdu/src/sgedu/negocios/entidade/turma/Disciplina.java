@@ -6,9 +6,10 @@ import sgedu.negocios.entidade.usuarios.Professor;
 
 /**
  * Class Disciplina
- * @author laisy
- * A classe Disciplina 
- *
+ * @author Laisy
+ * Classe Disciplina cria objetos do tipo Disciplina, seus atributos e metodos.
+ * Uma Disciplina possui um Professor que a ensina, um nome (ex "Matematica"), e quantidade 
+ * de aulas anual. Ainda possui metodos que calcula a quantidade de aulas por bimestre.
  */
 
 public class Disciplina implements Serializable{
