@@ -2,9 +2,13 @@ package sgedu.dados.usuarios;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import sgedu.negocios.entidade.usuarios.Aluno;
 
+/**
+ * Abaixo temos a interface a ser implementada no repositório de Aluno, 
+ * com suas assinaturas de métodos.
+ * @author laisy
+ */
 public interface IRepositorioAluno {
 	
 	void salvarArquivoAluno() throws IOException;

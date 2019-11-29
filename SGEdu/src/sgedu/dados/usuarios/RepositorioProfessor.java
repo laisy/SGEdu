@@ -9,6 +9,11 @@ import java.util.ArrayList;
 
 import sgedu.negocios.entidade.usuarios.Professor;
 
+/**
+ * Abaixo temos a classe para o repositório de Professor que serve para armazenar em um arraylist para salvar em um arquivo binário
+ * todos os dados dos Professores adicionados no sistema; e a implementação da interface IRepositorioProfessor.
+ * @author laisy
+ */
 public class RepositorioProfessor implements IRepositorioProfessor{
 	ArrayList <Professor> professores;
 	
@@ -17,6 +22,10 @@ public class RepositorioProfessor implements IRepositorioProfessor{
 		professores = new ArrayList<Professor>();
 	}
 	
+	/**
+	 * Metodo para criar a salvar o arquivo de Professores.
+	 */
+
 	public void salvarArquivoProfessor() throws IOException {
 		FileOutputStream file = new FileOutputStream("Professores.dat");
 		ObjectOutputStream os = new ObjectOutputStream(file);
@@ -24,6 +33,13 @@ public class RepositorioProfessor implements IRepositorioProfessor{
 		os.close();
 	}
 	
+	/**
+	 * Metodo para buscar o arquivo na pasta, e assim verificar a existencia dele,
+	 * caso nao encontre, ele cria um.
+	 * Este metodo possui um tratamento de excecoes para excecoes do tipo ClassNotFoundException
+	 * nao serem passadas pra cima.
+	 */
+
 	public void buscarArquivoProfessor() throws IOException{
 		try{
 			FileInputStream file = new FileInputStream("Professores.dat");
@@ -42,6 +58,10 @@ public class RepositorioProfessor implements IRepositorioProfessor{
 		salvarArquivoProfessor();
 	}
 	
+	/**
+	 * Metodo para remover Professor passando so o nome
+	 * @param nome do Professor
+	 */
 	public void removerProfessorNome(String nome) throws IOException {
 		Professor p = buscarProfessorNome(nome);
 		
@@ -49,6 +69,10 @@ public class RepositorioProfessor implements IRepositorioProfessor{
 		salvarArquivoProfessor();
 	}
 	
+	/**
+	 * Metodo para remover Professor passando o login
+	 * @param login do Professor
+	 */
 	public void removerProfessorLogin(String login) throws IOException {
 		Professor p = buscarProfessorLogin(login);
 		
@@ -57,6 +81,11 @@ public class RepositorioProfessor implements IRepositorioProfessor{
 
 	}
 	
+	/**
+	 * Metodo para buscar Professor pelo nome
+	 * @param nome do Professor
+	 * @return retorna o Professor buscado, caso nao encontre retorna null;
+	 */
 	public Professor buscarProfessorNome(String nome) {
 		for(int i=0; i<professores.size(); i++) {
 			if(professores.get(i).getNome().contentEquals(nome)) {
@@ -66,6 +95,11 @@ public class RepositorioProfessor implements IRepositorioProfessor{
 		return null;
 	}
 	
+	/**
+	 * Metodo para buscar Professor pelo login
+	 * @param login do Professor
+	 * @return retorna o Professor buscado, caso nao encontre retorna null;
+	 */
 	public Professor buscarProfessorLogin(String login) {
 		for(int i=0; i<professores.size(); i++) {
 			if(professores.get(i).getLogin().contentEquals(login)) {
@@ -75,6 +109,10 @@ public class RepositorioProfessor implements IRepositorioProfessor{
 		return null;
 	}
 	
+	/**
+	 * Metodo para alterar senha do Professor
+	 * @param objeto Professor alterado
+	 */
 	public void alterarSenhaProfessor(Professor professor) throws IOException{ 
 		Professor p = buscarProfessorLogin(professor.getLogin());
 		
@@ -82,6 +120,10 @@ public class RepositorioProfessor implements IRepositorioProfessor{
 		salvarArquivoProfessor();
 	}
 	
+	/**
+	 * Metodo para alterar nome do Professor
+	 * @param objeto Professor alterado
+	 */
 	public void alterarNomeProfessor(Professor professor) throws IOException{ 
 		Professor p = buscarProfessorLogin(professor.getLogin());
 		

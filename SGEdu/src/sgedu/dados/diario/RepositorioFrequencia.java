@@ -24,6 +24,9 @@ public class RepositorioFrequencia implements IRepositorioFrequencia{
 		this.frequencias = new ArrayList<Frequencia>();
 	}
 
+	/**
+	 * Metodo para criar a salvar o arquivo de Frequencia.
+	 */
 	public void salvarArquivoFrequencia() throws IOException {
 		FileOutputStream file = new FileOutputStream("Frequencia.dat");
 		ObjectOutputStream os = new ObjectOutputStream(file);
@@ -31,6 +34,13 @@ public class RepositorioFrequencia implements IRepositorioFrequencia{
 		os.close();
 	}
 	
+	
+	/**
+	 * Metodo para buscar o arquivo na pasta, e assim verificar a existencia dele,
+	 * caso nao encontre, ele cria um.
+	 * Este metodo possui um tratamento de excecoes para excecoes do tipo ClassNotFoundException
+	 * nao serem passadas pra cima.
+	 */
 	public void buscarArquivoFrequencia() throws IOException{
 		try {
 			FileInputStream file = new FileInputStream("Frequencia.dat");
@@ -49,6 +59,11 @@ public class RepositorioFrequencia implements IRepositorioFrequencia{
 		salvarArquivoFrequencia();
 	}
 	
+	/**
+	 * Metodo para buscar Frequencia do Aluno por chaves aluno, disciplina e ano
+	 * @param aluno, disciplina e ano da avaliacao
+	 * @return retorna a frequencia buscada, caso nao encontre retorna null;
+	 */
 	public Frequencia buscaFrequenciaAluno(Aluno aluno, Disciplina disciplina, int ano) {
 		for(int i=0; i<frequencias.size(); i++) {
 			if(frequencias.get(i).getAluno() == aluno && frequencias.get(i).getAno() == ano && frequencias.get(i).getDisciplina() == disciplina) {
@@ -58,6 +73,11 @@ public class RepositorioFrequencia implements IRepositorioFrequencia{
 		return null;
 	}
 	
+	/**
+	 * Metodo para buscar Frequencia do Aluno pelo objeto frequencia
+	 * @param frequencia
+	 * @return retorna a frequencia buscada, caso nao encontre retorna null;
+	 */
 	public Frequencia buscaFrequencia(Frequencia f) {
 		for(int i=0; i<frequencias.size(); i++) {
 			if(f.equals(i)) {
