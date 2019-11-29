@@ -80,7 +80,7 @@ public class RepositorioAluno implements IRepositorioAluno{
 	}
 	
 	public void alterarNomeAluno(Aluno aluno) throws IOException{ 
-		Aluno a = buscarAlunoNome(aluno.getNome());
+		Aluno a = buscarAlunoLogin(aluno.getLogin());
 		
 		aluno.setNome(a.getNome());
 		salvarArquivoAluno();

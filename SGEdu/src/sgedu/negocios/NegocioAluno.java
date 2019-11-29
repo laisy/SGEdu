@@ -42,6 +42,24 @@ public class NegocioAluno {
 		
 	}
 	
+	public void AlterarNome(Aluno aluno) {
+		try {
+			repositorio.alterarNomeAluno(aluno);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void alterarSenha(Aluno aluno) {
+		try {
+			repositorio.alterarSenhaAluno(aluno);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public boolean confirmaLogin(String login, String senha) {
 		Aluno resposta =repositorio.buscarAlunoLogin(login)	;
 		if(resposta!=null) {

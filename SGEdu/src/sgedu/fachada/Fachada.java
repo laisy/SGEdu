@@ -99,6 +99,14 @@ public class Fachada {
 		return negocioAluno.getAlunos();
 	}
 	
+	public void alterarNomeAluno(Aluno aluno){
+		negocioAluno.AlterarNome(aluno);
+	}
+	
+	public void alterarSenhaAluno(Aluno aluno) {
+		negocioAluno.alterarSenha(aluno);
+	}
+	
 	
 	
 	///////////////Responsavel
@@ -115,7 +123,7 @@ public class Fachada {
 		negocioResponsavel.addAluno(responsavel, aluno);
 	}
 	
-	public Usuario buscarLoginResponsavel(String login) {
+	public Responsavel buscarLoginResponsavel(String login) {
 		return negocioResponsavel.buscaLogin(login);
 	}
 	

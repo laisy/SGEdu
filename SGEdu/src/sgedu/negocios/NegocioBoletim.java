@@ -23,10 +23,10 @@ public class NegocioBoletim {
     	this.avaliacoes = new ArrayList<Avaliacao>();
     }
     
-//    public ArrayList addFrequencia(Aluno aluno) {
-//    	repositorioFrequencia.buscaFrequenciaAluno(aluno, bimestre, disciplina)
-//    }
-//
+    public ArrayList addFrequencia(Aluno aluno) {
+    	repositorioFrequencia.buscaFrequenciaAluno(aluno, bimestre, disciplina)
+    }
+  
     
 	
 
