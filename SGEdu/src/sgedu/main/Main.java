@@ -24,7 +24,6 @@ public class Main extends Application {
 	private static Scene loginProfessor;
 	private static Scene loginResponsavel;
 	private static Scene loginCoordenador;
-	private static Scene VisualizarBoletim;
 	private static Scene AlunoLogado;
 	private static Scene ProfessorLogado;
 	private static Scene CoordenadorLogado;
@@ -114,7 +113,6 @@ public class Main extends Application {
 		
 
 		/*
-		
 		//////////usuarios testes///////////
 		Aluno aluno = new Aluno("ALUNO0","armando","123");
 		System.out.println(aluno.getLogin());

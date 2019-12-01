@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sgedu.gui.controllers.DisciplinasController">
+   <children>
+      <Text layoutX="245.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disciplinas">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfNome1" layoutX="14.0" layoutY="95.0" promptText="Nome da disciplina" />
+      <TextField fx:id="tfQuantidadeAula" layoutX="14.0" layoutY="145.0" prefHeight="31.0" prefWidth="187.0" promptText="Quantidade de aulas" />
+      <Button fx:id="btCadastrar" layoutX="52.0" layoutY="185.0" mnemonicParsing="false" onAction="#botaoCadastrar" text="Cadastrar disciplina" />
+      <ListView fx:id="lvDisciplinas" layoutX="486.0" layoutY="76.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="tfNome2" layoutX="245.0" layoutY="95.0" promptText="Nome da disciplina" />
+      <TextField fx:id="tfProfessor" layoutX="245.0" layoutY="145.0" promptText="Login do professor" />
+      <Button fx:id="btAdicionar" layoutX="282.0" layoutY="185.0" mnemonicParsing="false" onAction="#botaoAdicionarProfessor" text="Adicionar professor" />
+      <Label fx:id="lbNotificacao" layoutX="108.0" layoutY="267.0" prefHeight="84.0" prefWidth="309.0" />
+      <Button fx:id="btRemover" layoutX="54.0" layoutY="223.0" mnemonicParsing="false" onAction="#botaoRemover" text="Remover disciplina" />
+      <Button fx:id="btVoltar" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#botaoVoltar" text="Voltar" />
+   </children>
+</AnchorPane>

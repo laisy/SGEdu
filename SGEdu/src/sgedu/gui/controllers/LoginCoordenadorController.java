@@ -14,6 +14,11 @@ import javafx.stage.Stage;
 import sgedu.fachada.Fachada;
 import sgedu.main.Main;
 
+/**
+ * Class LoginCoordenadorController
+ * @author Allysson
+ *	Classe de controle para gerenciar a tela de login do Coordenador.
+ */
 public class LoginCoordenadorController {
 
     @FXML
@@ -48,10 +53,10 @@ public class LoginCoordenadorController {
 	    		
 	    		
 	    		
-	    		///transferindo a informação do usuario logado para a proxima tela
+	    		///transferindo a informaï¿½ï¿½o do usuario logado para a proxima tela
 	    		coordenadorLogadoController.transferirMessagem(fachada.getUsuarioLogado().getNome());
 	
-	    		////////apaga as informaçõe dos campos login e senha
+	    		////////apaga as informaï¿½ï¿½e dos campos login e senha
 	    		tfLogin.setText("");
 	    		pfSenha.setText("");
 	    		

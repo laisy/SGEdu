@@ -3,7 +3,6 @@ package sgedu.gui.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +15,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sgedu.fachada.Fachada;
 import sgedu.main.Main;
+
+/**
+ * Class LoginAlunoController
+ * @author Allysson
+ *	Classe de controle para gerenciar a tela de login do aluno.
+ */
 
 public class LoginAlunoController implements Initializable {
 
@@ -55,12 +60,12 @@ public class LoginAlunoController implements Initializable {
             		
             		AlunoLogadoController alunoLogadoController=loader.getController();
             		
-            		///transferindo a informação do usuario logado para a proxima tela
+            		///transferindo a informaï¿½ï¿½o do usuario logado para a proxima tela
             		alunoLogadoController.transferirMessagem(fachada.getUsuarioLogado().getNome());
             		
             		
             		
-            		////////apaga as informaçõe dos campos login e senha
+            		////////apaga as informaï¿½ï¿½e dos campos login e senha
     	    		tfLogin.setText("");
     	    		pfSenha.setText("");
     	    		

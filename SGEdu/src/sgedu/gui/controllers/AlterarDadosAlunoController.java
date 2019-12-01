@@ -53,7 +53,7 @@ public class AlterarDadosAlunoController {
     		}
     		
     	}else {
-    		lbNotificacao.setText("Pesquise por um aluno valido primeiro");
+    		lbNotificacao.setText("Pesquise por um login valido");
     	}
 
     }

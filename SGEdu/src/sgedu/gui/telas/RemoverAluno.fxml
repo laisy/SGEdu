@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sgedu.gui.controllers.RemoverAlunoController">
+   <children>
+      <Text layoutX="197.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remover Aluno">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfLogin" layoutX="64.0" layoutY="95.0" promptText="Login do aluno" />
+      <Button fx:id="btVoltar" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#botaoVoltar" text="Voltar" />
+      <Button fx:id="btBuscar" layoutX="186.0" layoutY="140.0" mnemonicParsing="false" onAction="#botaoBuscar" text="Buscar" />
+      <Label fx:id="lbNotificacao" layoutX="47.0" layoutY="192.0" prefHeight="75.0" prefWidth="609.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btConfirmar" layoutX="513.0" layoutY="280.0" mnemonicParsing="false" onAction="#botaoConfirmar" text="Confimar remoção" />
+   </children>
+</AnchorPane>

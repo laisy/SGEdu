@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sgedu.gui.controllers.AlterarDadosProfessorController">
+   <children>
+      <Text layoutX="58.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alterar Dados dos Professores">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfLoginPesquisa" layoutX="38.0" layoutY="122.0" promptText="Insira o Login do Aluno" />
+      <Button fx:id="btPesquisar" layoutX="142.0" layoutY="162.0" mnemonicParsing="false" onAction="#botaoPesquisar" text="Pesquisar" />
+      <TextField fx:id="tfNome" layoutX="418.0" layoutY="122.0" promptText="Nome" />
+      <Text layoutX="442.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Altere os dados aqui:" />
+      <TextField fx:id="tfSenha" layoutX="418.0" layoutY="162.0" promptText="Senha" />
+      <Label fx:id="lbNotificacao" layoutX="109.0" layoutY="210.0" prefHeight="105.0" prefWidth="236.0" />
+      <Button fx:id="btVoltar" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#botaoVoltar" text="Voltar" />
+      <Button fx:id="btAtualizar" layoutX="482.0" layoutY="306.0" mnemonicParsing="false" onAction="#botaoAtualizar" text="Atualizar dados" />
+      <ComboBox fx:id="cbDisciplina" layoutX="437.0" layoutY="210.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbTurma" layoutX="437.0" layoutY="254.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

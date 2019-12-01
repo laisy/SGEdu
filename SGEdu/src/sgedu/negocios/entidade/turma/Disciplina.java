@@ -53,7 +53,7 @@ public class Disciplina implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Disciplina: " + nome + " PROFESSOR: " + professor + " N° DE AULAS: " + quantAulas;
+		return "Disciplina: " + nome + "\nPROFESSOR: " + professor + "\nN° DE AULAS: " + quantAulas+"\n\n";
 	}
 
 	

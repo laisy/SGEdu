@@ -14,6 +14,11 @@ import javafx.stage.Stage;
 import sgedu.fachada.Fachada;
 import sgedu.main.Main;
 
+/**
+ * Class LoginProfessorController
+ * @author Allysson
+ *	Classe de controle para gerenciar a tela de login do Professor.
+ */
 public class LoginProfessorController {
 
 
@@ -44,12 +49,12 @@ public class LoginProfessorController {
         		
         		ProfessorLogadoController professorLogadoController=loader.getController();
         		
-        		///transferindo a informação do usuario logado para a proxima tela
+        		///transferindo a informaï¿½ï¿½o do usuario logado para a proxima tela
         		professorLogadoController.transferirMessagem(fachada.getUsuarioLogado().getNome());
         	
         		
         		
-        		////////apaga as informaçõe dos campos login e senha
+        		////////apaga as informaï¿½ï¿½e dos campos login e senha
         	    		tfLogin.setText("");
         	    		pfSenha.setText("");
         	    		

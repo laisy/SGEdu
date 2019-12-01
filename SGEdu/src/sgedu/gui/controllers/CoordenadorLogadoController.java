@@ -2,6 +2,7 @@ package sgedu.gui.controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -15,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sgedu.fachada.Fachada;
 import sgedu.main.Main;
+import sgedu.negocios.entidade.turma.Disciplina;
 
 public class CoordenadorLogadoController {
 	
@@ -26,12 +28,52 @@ public class CoordenadorLogadoController {
 
     @FXML
     private TextField tfNome;
+   
     @FXML
     private Label lbNome;
-
-    
+ 
     @FXML
     private Button btCrudAluno;
+   
+    @FXML
+    private Button btCrudProfessor;
+
+    @FXML
+    private Button btCrudResponsavel;
+
+    @FXML
+    private Button btCrudCoordenador;
+   
+    @FXML
+    private Button btDisciplinas;
+    
+    @FXML
+    private Button btTurmas;
+
+    
+    Fachada fachada=Fachada.criaObjeto();
+    
+    @FXML
+    void botaoTurmas(ActionEvent event) {
+    	try {
+			/////carregando a proxima tela
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../telas/Turmas.fxml"));
+			Parent root = loader.load();
+			
+			TurmasController turmaController=loader.getController();
+			turmaController.carregarLista();
+			
+			Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Turmas");
+            stage.show();
+           
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+    }
 
     @FXML
     void botaoCrudAluno(ActionEvent event) {	
@@ -53,10 +95,62 @@ public class CoordenadorLogadoController {
 
     }
     
+    @FXML
+    void botaoCrudCoordenador(ActionEvent event) {
+
+    }
+
+    @FXML
+    void botaoCrudProfessor(ActionEvent event) {
+    	try {
+			/////carregando a proxima tela
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../telas/CrudProfessor.fxml"));
+			Parent root = loader.load();
+			
+			Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("CRUD professor");
+            stage.show();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+
+    @FXML
+    void botaoCrudResponsavel(ActionEvent event) {
+
+    }
+    
 
     
     public void transferirMessagem(String nome) {
         lbNome.setText(nome);
+    }
+    
+    @FXML
+    void botaoDisciplinas(ActionEvent event) {	
+    	try {
+			/////carregando a proxima tela
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../telas/Disciplinas.fxml"));
+			Parent root = loader.load();
+			
+			DisciplinasController disciplinasController=loader.getController();
+			
+			
+			
+			ArrayList<Disciplina> disciplinas=fachada.getDisciplinas();
+			disciplinasController.carregarLista();
+		
+			
+			////exibe a nova tela com o usuario logado 		
+			Stage stage = new Stage();
+	        stage.setScene(new Scene(root));
+	        stage.setTitle("Disciplina");
+	        stage.show();
+    	}catch(IOException e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML

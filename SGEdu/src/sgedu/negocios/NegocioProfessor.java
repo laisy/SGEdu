@@ -1,8 +1,10 @@
 package sgedu.negocios;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import sgedu.dados.usuarios.IRepositorioProfessor;
+import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Professor;
 import sgedu.negocios.excecoes.UsuarioJaCadastradoException;
 
@@ -14,9 +16,10 @@ public class NegocioProfessor {
 		this.repositorio=repositorio;
 	}
 	
-	public void adicionar(Professor professor) throws UsuarioJaCadastradoException, IOException{
+	public void adicionar(String login, String nome, String senha, Disciplina disciplina) throws UsuarioJaCadastradoException, IOException{
 		try {
 			repositorio.buscarArquivoProfessor();
+			Professor professor=new Professor(login,nome,senha,disciplina);
 			Professor professorBusca=repositorio.buscarProfessorLogin(professor.getLogin());
 			
 			if(professorBusca==null) {
@@ -41,6 +44,28 @@ public class NegocioProfessor {
 			return resposta.verificaSenha(senha);
 		}
 		return false;
+	}
+	
+	public ArrayList<Professor> getProfessores(){
+		return repositorio.getProfessores();
+	}
+	
+	public void alteraNome(Professor professor) {
+		try {
+			repositorio.alterarNomeProfessor(professor);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+	}
+	
+	public void alteraSenha(Professor professor) {
+		try {
+			repositorio.alterarSenhaProfessor(professor);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
 	}
 	
 	

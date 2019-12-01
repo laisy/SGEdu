@@ -89,6 +89,11 @@ public class RepositorioDisciplina implements IRepositorioDisciplina {
 	}
 
 	public ArrayList<Disciplina> getDisciplinas() {
+		try {
+			this.buscarArquivoDisciplina();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return disciplinas;
 	}
 }

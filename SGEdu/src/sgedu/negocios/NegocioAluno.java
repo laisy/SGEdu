@@ -38,8 +38,15 @@ public class NegocioAluno {
 	
 	
 	public void remover(String login) {
-		
-		
+		try {
+			repositorio.buscarArquivoAluno();
+			Aluno alunoBusca=repositorio.buscarAlunoLogin(login);
+			if(alunoBusca!=null) {		
+				repositorio.removerAlunoLogin(login);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
 	}
 	
 	public void AlterarNome(Aluno aluno) {

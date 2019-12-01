@@ -5,6 +5,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import sgedu.main.Main;
 
+/**
+ * Class MenuController
+ * @author Allysson
+ *	Classe de controle para gerenciar a primeira tela de logins.
+ */
+
 public class MenuController {
 
     @FXML

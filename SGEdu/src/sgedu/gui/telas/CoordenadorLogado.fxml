@@ -24,6 +24,16 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="btCrudAluno" layoutX="272.0" layoutY="147.0" mnemonicParsing="false" onAction="#botaoCrudAluno" text="CRUD aluno" />
+      <Button fx:id="btCrudAluno" layoutX="413.0" layoutY="149.0" mnemonicParsing="false" onAction="#botaoCrudAluno" text="CRUD aluno" />
+      <Button fx:id="btCrudProfessor" layoutX="413.0" layoutY="195.0" mnemonicParsing="false" onAction="#botaoCrudProfessor" text="CRUD professor" />
+      <Button fx:id="btCrudResponsavel" layoutX="413.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoCrudResponsavel" text="CRUD responsavel" />
+      <Button fx:id="btCrudCoordenador" layoutX="413.0" layoutY="280.0" mnemonicParsing="false" onAction="#botaoCrudCoordenador" text="CRUD coordenador" />
+      <Text layoutX="413.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuarios">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="btDisciplinas" layoutX="172.0" layoutY="211.0" mnemonicParsing="false" onAction="#botaoDisciplinas" prefHeight="31.0" prefWidth="90.0" text="Disciplinas" />
+      <Button fx:id="btTurmas" layoutX="183.0" layoutY="165.0" mnemonicParsing="false" onAction="#botaoTurmas" text="Turmas" />
    </children>
 </AnchorPane>

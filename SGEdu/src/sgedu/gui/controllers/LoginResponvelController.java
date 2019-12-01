@@ -1,7 +1,6 @@
 package sgedu.gui.controllers;
 
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +13,11 @@ import javafx.stage.Stage;
 import sgedu.fachada.Fachada;
 import sgedu.main.Main;
 
+/**
+ * Class LoginResponsavelController
+ * @author Allysson
+ *	Classe de controle para gerenciar a tela de login do Responsavel.
+ */
 public class LoginResponvelController {
 
 
@@ -48,10 +52,10 @@ public class LoginResponvelController {
 	    		
 	    		
 	    		
-	    		///transferindo a informação do usuario logado para a proxima tela
+	    		///transferindo a informaï¿½ï¿½o do usuario logado para a proxima tela
 	    		responsavelLogadoController.transferirMessagem(fachada.getUsuarioLogado().getNome());
 	
-	    		////////apaga as informaçõe dos campos login e senha
+	    		////////apaga as informaï¿½ï¿½e dos campos login e senha
 	    		tfLogin.setText("");
 	    		pfSenha.setText("");
 	    		

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sgedu.gui.controllers.CadastrarProfessorController">
+   <children>
+      <Text layoutX="161.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de Professor">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfNome" layoutX="68.0" layoutY="109.0" promptText="Nome do professor" />
+      <TextField fx:id="tfLogin" layoutX="68.0" layoutY="157.0" promptText="Login" />
+      <TextField fx:id="tfSenha" layoutX="68.0" layoutY="200.0" promptText="Senha" />
+      <TextField fx:id="tfSenha2" layoutX="68.0" layoutY="248.0" promptText="Confirmar senha" />
+      <Button fx:id="btVoltar" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#botaoVoltar" text="Voltar" />
+      <Button fx:id="btCadastrar" layoutX="172.0" layoutY="291.0" mnemonicParsing="false" onAction="#botaoCadastrar" text="Cadastrar" />
+      <Label fx:id="lbNotificacao" layoutX="323.0" layoutY="191.0" prefHeight="145.0" prefWidth="337.0" />
+      <ComboBox fx:id="cbDisciplinas" layoutX="405.0" layoutY="109.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

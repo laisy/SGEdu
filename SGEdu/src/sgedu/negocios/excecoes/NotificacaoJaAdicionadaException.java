@@ -1,5 +1,12 @@
 package sgedu.negocios.excecoes;
 
+/**
+ * Class NotificacaoJaAdicionadaException
+ * @author laisy
+ * Classe para tratar o erro de Notificacao já enviada.
+ * (Extensão da classe Exception (exceção)).
+ */
+
 public class NotificacaoJaAdicionadaException extends Exception{
 	
 	public NotificacaoJaAdicionadaException(String mensagem) {
@@ -7,6 +14,6 @@ public class NotificacaoJaAdicionadaException extends Exception{
 	}
 	
 	public NotificacaoJaAdicionadaException() {
-		super("Notificação já adicionada! ");
+		super("Notificação já enviada! ");
 	}
 }

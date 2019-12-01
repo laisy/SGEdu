@@ -70,7 +70,20 @@ public class CrudAlunoController {
 
     @FXML
     void botaoRemover(ActionEvent event) {
-
+    	try {
+			/////carregando a proxima tela
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../telas/RemoverAluno.fxml"));
+			Parent root = loader.load();
+			
+			
+			Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Remover alunos");
+            stage.show();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
     }
 
     @FXML

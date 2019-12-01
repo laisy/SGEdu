@@ -132,6 +132,8 @@ public class RepositorioProfessor implements IRepositorioProfessor{
 		professor.setNome(p.getNome());
 		salvarArquivoProfessor();
 	}
+	
+	
 
 	public ArrayList<Professor> getProfessores() {
 		return professores;

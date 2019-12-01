@@ -3,6 +3,10 @@ package sgedu.fachada;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import sgedu.dados.turma.IRepositorioDisciplina;
+import sgedu.dados.turma.IRepositorioTurma;
+import sgedu.dados.turma.RepositorioDisciplina;
+import sgedu.dados.turma.RepositorioTurma;
 import sgedu.dados.usuarios.IRepositorioAluno;
 import sgedu.dados.usuarios.IRepositorioCoordenador;
 import sgedu.dados.usuarios.IRepositorioProfessor;
@@ -13,8 +17,12 @@ import sgedu.dados.usuarios.RepositorioProfessor;
 import sgedu.dados.usuarios.RepositorioResponsavel;
 import sgedu.negocios.NegocioAluno;
 import sgedu.negocios.NegocioCoordenador;
+import sgedu.negocios.NegocioDisciplina;
 import sgedu.negocios.NegocioProfessor;
 import sgedu.negocios.NegocioResponsavel;
+import sgedu.negocios.NegocioTurma;
+import sgedu.negocios.entidade.turma.Disciplina;
+import sgedu.negocios.entidade.turma.Turma;
 import sgedu.negocios.entidade.usuarios.Aluno;
 import sgedu.negocios.entidade.usuarios.Coordenador;
 import sgedu.negocios.entidade.usuarios.Professor;
@@ -30,6 +38,9 @@ public class Fachada {
 	private NegocioResponsavel negocioResponsavel;
 	private NegocioCoordenador negocioCoordenador;
 	private NegocioProfessor negocioProfessor;
+	
+	private NegocioDisciplina negocioDisciplina;
+	private NegocioTurma negocioTurma;
 	private Usuario usuarioLogado;
 	
 
@@ -37,8 +48,6 @@ public class Fachada {
 		usuarioLogado=null;
 		
 		IRepositorioAluno repositorioAluno=new RepositorioAluno();
-		
-		
 		this.negocioAluno=new NegocioAluno(repositorioAluno);
 		
 		IRepositorioResponsavel repositorioResponsavel=new RepositorioResponsavel();
@@ -50,12 +59,22 @@ public class Fachada {
 		IRepositorioProfessor repositorioProfessor=new RepositorioProfessor();
 		this.negocioProfessor=new NegocioProfessor(repositorioProfessor);
 		
+		IRepositorioDisciplina repositorioDisciplina=new RepositorioDisciplina();
+		this.negocioDisciplina=new NegocioDisciplina(repositorioDisciplina);
+		
+		IRepositorioTurma repositorioTurma=new RepositorioTurma();
+		this.negocioTurma=new NegocioTurma(repositorioTurma);
+	
+		
 		
 		try {
 			repositorioAluno.buscarArquivoAluno();
 			repositorioResponsavel.buscarArquivoResponsavel();
 			repositorioCoordenador.buscarArquivoCoordenador();
 			repositorioProfessor.buscarArquivoProfessor();
+			
+			repositorioDisciplina.buscarArquivoDisciplina();
+			repositorioTurma.buscarArquivoTurma();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -107,6 +126,10 @@ public class Fachada {
 		negocioAluno.alterarSenha(aluno);
 	}
 	
+	public void removerAluno(String login) {
+		negocioAluno.remover(login);
+	}
+	
 	
 	
 	///////////////Responsavel
@@ -152,8 +175,9 @@ public class Fachada {
 	
 	/////////professor
 	
-	public void adicionarProfessor(Professor professor) throws UsuarioJaCadastradoException, IOException {
-		negocioProfessor.adicionar(professor);
+	public void adicionarProfessor(String login, String nome, String senha, String disciplina) throws UsuarioJaCadastradoException, IOException {
+		Disciplina disciplinaBusca=this.buscarDisciplina(disciplina);
+		negocioProfessor.adicionar(login,nome,senha,disciplinaBusca);
 	}
 	
 	public boolean confirmaLoginProfessor(String login, String senha) {
@@ -163,7 +187,52 @@ public class Fachada {
 	public Professor buscarLoginProfessor(String login) {
 		return negocioProfessor.buscarLogin(login);
 	}
-
+	
+	public ArrayList<Professor> getProfessores(){
+		return negocioProfessor.getProfessores();
+	}
+	
+	public void alteraNomeProfessor(Professor professor) {
+		negocioProfessor.alteraNome(professor);
+	}
+	public void alterarSenhaProfessor(Professor professor) {
+		negocioProfessor.alteraSenha(professor);
+	}
+	
+	
+	
+	//////////disciplina
+	public void adicionarDisciplina(String nome, int aulas) {
+		negocioDisciplina.adicionar(nome, aulas);
+	}
+	
+	public ArrayList<Disciplina> getDisciplinas() {
+		return negocioDisciplina.getDisciplinas();
+	}
+	
+	public void removeDisciplina(String nome) {
+		negocioDisciplina.remover(nome);
+	}
+	
+	public void addProfessorTurma(String disciplina, String professorLogin) {
+		Professor professorBusca=this.buscarLoginProfessor(professorLogin);
+		negocioDisciplina.addProfessorTurma(disciplina, professorBusca);
+		
+	}
+	
+	public Disciplina buscarDisciplina(String nome) {
+		return negocioDisciplina.buscar(nome);
+	}
+	
+	
+	/////////////Turma
+	public void adicionarTurma(String nome,int ano) {
+		negocioTurma.adicionar(nome, ano);
+	}
+	
+	public ArrayList<Turma> getTurmas(){
+		return negocioTurma.getTurma();
+	}
 
 	
 	

@@ -43,8 +43,7 @@ public class Professor extends Usuario implements Serializable {
 
 	@Override
 	public String toString() {
-		return "LOGIN: "+super.getLogin()+" \n    NOME: "+super.getNome() + "\n" +
-				" DISCIPLINA: " + disciplina.getNome();
+		return super.getNome() ;
 	}
 	
 	
