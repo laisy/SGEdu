@@ -15,7 +15,7 @@ import sgedu.negocios.entidade.usuarios.Aluno;
  * um objeto frequencia e um objeto avaliacao referente a uma disciplina. 
  */
 
-public class Boletim {
+public class Boletim{
 
     private Aluno aluno;
     private int ano;
@@ -49,13 +49,15 @@ public class Boletim {
     	for(int i=0; i<repositorioDisciplina.getDisciplinas().size(); i++) {
     		Frequencia f = repositorioFrequencia.buscaFrequenciaAluno(aluno, repositorioDisciplina.getDisciplinas().get(i), ano);
     		Avaliacao a = repositorioAvaliacao.buscaAvaliacaoAluno(aluno, repositorioDisciplina.getDisciplinas().get(i), ano);
-    		disciplinasBoletim.add(new DisciplinaBoletim(f, a));
+    		if(a!=null || f!=null) {
+    			disciplinasBoletim.add(new DisciplinaBoletim(f, a));
+    		}
     	}
     }
 
 	@Override
 	public String toString() {
-		return "Boletim " + ano + " ALUNO: " + aluno + "\n"
+		return "Boletim " + ano+"\n" + aluno + "\n"
 				+ disciplinasBoletim.toString();
 	}
     

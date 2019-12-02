@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import sgedu.dados.turma.IRepositorioTurma;
+import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.turma.Turma;
+import sgedu.negocios.entidade.usuarios.Aluno;
 
 public class NegocioTurma {
 	
@@ -24,9 +26,7 @@ public class NegocioTurma {
 			Turma busca=repositorio.buscarTurma(turma.getNome(), turma.getAno());
 			if(busca==null) {
 				repositorio.addTurma(turma);
-				System.out.println("entrou no IF");
-			}else {
-				System.out.println("entrou no else");
+			
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -37,6 +37,42 @@ public class NegocioTurma {
 		return repositorio.getTurmas();
 	}
 	
+	public void remover(String nome,int ano) {
+		try {
+			repositorio.removerTurma(nome, ano);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void adicionarAluno(String nome,int ano,Aluno aluno) {
+		Turma turma=repositorio.buscarTurma(nome, ano);	
+		turma.addAlunosTurma(aluno);
+		try {
+			repositorio.salvarArquivoTurma();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void adicionarDisciplina(String nome,int ano,Disciplina disciplina) {
+		Turma turma=repositorio.buscarTurma(nome, ano);	
+		turma.addDisciplinaTurma(disciplina);
+		try {
+			repositorio.salvarArquivoTurma();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public Turma buscaTurma(String nome, int ano) {
+		Turma turma=repositorio.buscarTurma(nome, ano);
+		if(turma!=null) {
+			return turma;
+		}
+		return null;
+	}
 	
 	
 	

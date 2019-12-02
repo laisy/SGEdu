@@ -22,8 +22,9 @@
       <TextField fx:id="tfSenha" layoutX="418.0" layoutY="162.0" promptText="Senha" />
       <Label fx:id="lbNotificacao" layoutX="109.0" layoutY="210.0" prefHeight="105.0" prefWidth="236.0" />
       <Button fx:id="btVoltar" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#botaoVoltar" text="Voltar" />
-      <Button fx:id="btAtualizar" layoutX="482.0" layoutY="306.0" mnemonicParsing="false" onAction="#botaoAtualizar" text="Atualizar dados" />
-      <ComboBox fx:id="cbDisciplina" layoutX="437.0" layoutY="210.0" prefWidth="150.0" />
-      <ComboBox fx:id="cbTurma" layoutX="437.0" layoutY="254.0" prefWidth="150.0" />
+      <Button fx:id="btAtualizar" layoutX="482.0" layoutY="340.0" mnemonicParsing="false" onAction="#botaoAtualizar" text="Atualizar dados" />
+      <ComboBox fx:id="cbDisciplina" layoutX="443.0" layoutY="284.0" prefWidth="150.0" />
+      <TextField fx:id="tfNomeTurma" layoutX="418.0" layoutY="200.0" promptText="Turma" />
+      <TextField fx:id="tfAno" layoutX="418.0" layoutY="240.0" promptText="Ano da turma" />
    </children>
 </AnchorPane>

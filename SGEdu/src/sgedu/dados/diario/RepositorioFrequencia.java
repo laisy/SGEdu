@@ -68,7 +68,7 @@ public class RepositorioFrequencia implements IRepositorioFrequencia{
 	 */
 	public Frequencia buscaFrequenciaAluno(Aluno aluno, Disciplina disciplina, int ano) {
 		for(int i=0; i<frequencias.size(); i++) {
-			if(frequencias.get(i).getAluno() == aluno && frequencias.get(i).getAno() == ano && frequencias.get(i).getDisciplina() == disciplina) {
+			if(frequencias.get(i).getAluno().equals(aluno) && frequencias.get(i).getAno() == ano && frequencias.get(i).getDisciplina().equals(disciplina)) {
 				return frequencias.get(i);
 			}
 		}

@@ -67,8 +67,15 @@ public class RepositorioAvaliacao implements IRepositorioAvaliacao{
 	 */
 	public Avaliacao buscaAvaliacaoAluno(Aluno aluno, Disciplina disciplina, int ano) {
 		for(int i=0; i<avaliacoes.size(); i++) {
-			if(avaliacoes.get(i).getAluno() == aluno && avaliacoes.get(i).getAno() == ano && avaliacoes.get(i).getDisciplina() == disciplina) {
-				return avaliacoes.get(i);
+			System.out.println(avaliacoes.get(i));
+			
+			if(avaliacoes.get(i).getAluno().equals(aluno)){
+				Avaliacao a = avaliacoes.get(i);
+				if(a.getAno() == ano) {
+					if(a.getDisciplina().equals(disciplina)) {
+						return avaliacoes.get(i);
+					}
+				}
 			}
 		}
 		return null;

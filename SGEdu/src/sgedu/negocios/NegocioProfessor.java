@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import sgedu.dados.usuarios.IRepositorioProfessor;
 import sgedu.negocios.entidade.turma.Disciplina;
+import sgedu.negocios.entidade.turma.Turma;
 import sgedu.negocios.entidade.usuarios.Professor;
 import sgedu.negocios.excecoes.UsuarioJaCadastradoException;
 
@@ -66,6 +67,22 @@ public class NegocioProfessor {
 			
 			e.printStackTrace();
 		}
+	}
+	
+	public void alteraDisciplina(String login,Disciplina disciplina) {
+		Professor professor=repositorio.buscarProfessorLogin(login);
+		if(professor!=null) {
+			repositorio.buscarProfessorLogin(login).setDisciplina(disciplina);
+		}
+		
+	}
+	
+	public void alterarTurma(String login,Turma turma) {
+		Professor professor=repositorio.buscarProfessorLogin(login);
+		if(professor!=null) {
+			repositorio.buscarProfessorLogin(login).addTurma(turma);
+		}
+		
 	}
 	
 	

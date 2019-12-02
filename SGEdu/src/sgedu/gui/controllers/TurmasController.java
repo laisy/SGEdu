@@ -1,10 +1,15 @@
 package sgedu.gui.controllers;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -36,6 +41,12 @@ public class TurmasController {
     @FXML
     private TextField tfNomeBusca;
     
+    @FXML
+    private Label lbNotificacao;
+    
+    @FXML
+    private Button btApagar;
+    
     private boolean confirmar=false;
     
     Fachada fachada=Fachada.criaObjeto();
@@ -47,10 +58,42 @@ public class TurmasController {
     		lvTurmas.getItems().add((j)+"  "+turma.get(i).toString());
     	}
     }
+    
+    @FXML
+    void botaoApagar(ActionEvent event) {
+    	if(!confirmar) {
+    		lbNotificacao.setText("deseja remover "+tfnome.getText()+"?\n"
+    				+ "Aperte em Remover turma para confirmar");
+    	}else {
+    		int numero=strToInt(tfAno.getText(),0);
+    		fachada.removerTurma(tfnome.getText(), numero);
+    		lbNotificacao.setText("turma removida");
+    		confirmar=false;
+    	}
+    	confirmar=true;
+
+    }
 
     @FXML
     void botaoAdicionar(ActionEvent event) {
-    	
+    	try {
+			/////carregando a proxima tela
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../telas/AdicionarEmTurma.fxml"));
+			Parent root = loader.load();
+			
+			AdicionarEmTurmaController adicionarEmTurmaController=loader.getController();
+			
+			
+			Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Adicionar em turma");
+            stage.show();
+            adicionarEmTurmaController.carregarLista();
+           
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     	
     }
     

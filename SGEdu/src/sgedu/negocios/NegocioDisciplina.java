@@ -55,5 +55,9 @@ public class NegocioDisciplina {
 		return repositorio.buscarDisciplina(nome);
 	}
 	
+	public IRepositorioDisciplina getRepositorio() {
+		return repositorio;
+	}
+	
 	
 }

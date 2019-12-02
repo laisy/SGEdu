@@ -1,5 +1,6 @@
 package sgedu.negocios.entidade.diario;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Aluno;
@@ -11,7 +12,7 @@ import sgedu.negocios.entidade.usuarios.Aluno;
  * Avaliacao um aluno, uma disciplina, e uma nota para cada bimestre, escrita da forma nota1 = nota 1° Bimestre
  * e assim por diante, e também a media final de todas as notas.
  */
-public class Avaliacao{
+public class Avaliacao implements Serializable{
 	
 	private Aluno aluno;
 	private Disciplina disciplina;

@@ -58,6 +58,7 @@ public class DisciplinasController {
     				+"Aperte Adicionar professor para confirmar");
     	}else {
     		fachada.addProfessorTurma(tfNome2.getText(), tfProfessor.getText());
+    		fachada.alterarDisciplinaProfessor(tfProfessor.getText(), tfNome2.getText());
     		lbNotificacao.setText("Professor adicionado a turma");
     	}
     	

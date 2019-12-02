@@ -1,5 +1,6 @@
 package sgedu.negocios.entidade.diario;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Aluno;
@@ -13,7 +14,7 @@ import sgedu.negocios.entidade.usuarios.Aluno;
  * falta1 = faltas do 1º bimestre, frequencia1 = frequencias do 1º bimestre. Possui também a quantidade de faltas anual
  * e de frequencia total anual.
  */
-public class Frequencia{
+public class Frequencia implements Serializable{
 
 	private Aluno aluno;
 	private Disciplina disciplina;

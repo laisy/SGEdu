@@ -3,6 +3,10 @@ package sgedu.fachada;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import sgedu.dados.diario.IRepositorioAvaliacao;
+import sgedu.dados.diario.IRepositorioFrequencia;
+import sgedu.dados.diario.RepositorioAvaliacao;
+import sgedu.dados.diario.RepositorioFrequencia;
 import sgedu.dados.turma.IRepositorioDisciplina;
 import sgedu.dados.turma.IRepositorioTurma;
 import sgedu.dados.turma.RepositorioDisciplina;
@@ -16,6 +20,7 @@ import sgedu.dados.usuarios.RepositorioCoordenador;
 import sgedu.dados.usuarios.RepositorioProfessor;
 import sgedu.dados.usuarios.RepositorioResponsavel;
 import sgedu.negocios.NegocioAluno;
+import sgedu.negocios.NegocioBoletim;
 import sgedu.negocios.NegocioCoordenador;
 import sgedu.negocios.NegocioDisciplina;
 import sgedu.negocios.NegocioProfessor;
@@ -41,6 +46,7 @@ public class Fachada {
 	
 	private NegocioDisciplina negocioDisciplina;
 	private NegocioTurma negocioTurma;
+	private NegocioBoletim negocioBoletim;
 	private Usuario usuarioLogado;
 	
 
@@ -66,6 +72,11 @@ public class Fachada {
 		this.negocioTurma=new NegocioTurma(repositorioTurma);
 	
 		
+		IRepositorioFrequencia repositorioFrequencia=new RepositorioFrequencia();
+		IRepositorioAvaliacao repositorioAvaliacao=new RepositorioAvaliacao();
+		this.negocioBoletim=new NegocioBoletim(repositorioDisciplina,repositorioFrequencia,repositorioAvaliacao);
+		
+		
 		
 		try {
 			repositorioAluno.buscarArquivoAluno();
@@ -73,6 +84,8 @@ public class Fachada {
 			repositorioCoordenador.buscarArquivoCoordenador();
 			repositorioProfessor.buscarArquivoProfessor();
 			
+			repositorioFrequencia.buscarArquivoFrequencia();
+			repositorioAvaliacao.buscarArquivoAvaliacao();
 			repositorioDisciplina.buscarArquivoDisciplina();
 			repositorioTurma.buscarArquivoTurma();
 		} catch (IOException e) {
@@ -199,6 +212,21 @@ public class Fachada {
 		negocioProfessor.alteraSenha(professor);
 	}
 	
+	public void alterarDisciplinaProfessor(String login,String nomeDiscplina) {
+		Disciplina disciplina=negocioDisciplina.buscar(nomeDiscplina);
+		negocioProfessor.alteraDisciplina(login, disciplina);
+	}
+	
+	public void adicionaTurmaProfessor(String login,String nomeTurma, int ano) {
+		Turma turma=negocioTurma.buscaTurma(nomeTurma, ano);
+		Professor professor=negocioProfessor.buscarLogin(login);
+		if(turma!=null||professor!=null) {
+			professor.addTurma(turma);
+		}
+		
+		
+	}
+	
 	
 	
 	//////////disciplina
@@ -233,7 +261,56 @@ public class Fachada {
 	public ArrayList<Turma> getTurmas(){
 		return negocioTurma.getTurma();
 	}
+	
+	public void removerTurma(String nome,int ano) {
+		negocioTurma.remover(nome, ano);
+	}
+	
+	public void adicionarAlunoEmTurma(String turma,int ano,String login) {
+		Aluno aluno=negocioAluno.buscarLogin(login);
+		negocioTurma.adicionarAluno(turma, ano, aluno);
+	}
+	
+	public void adicionarDisciplinaEmTurma(String turma,int ano,String disciplina) {
+		Disciplina disciplinaBusca=negocioDisciplina.buscar(disciplina);
+		negocioTurma.adicionarDisciplina(turma, ano, disciplinaBusca);
+		
+	}
+	
+	public ArrayList<Aluno> getAlunosEmTurma(String nomeTurma, int ano){
+		Turma turma=negocioTurma.buscaTurma(nomeTurma, ano);
+		if(turma!=null) {
+			return turma.getAlunos();
+		}
+		return null;
+	}
+	
+	public Turma buscarTurma(String nome, int ano) {
+		return negocioTurma.buscaTurma(nome, ano);
+	}
+	
+	
+	/////////////////Boletim
+	public void adicionarBoletim(String loginAluno,Disciplina disciplina,int ano,double nota1, double nota2, double nota3, double nota4) {
+		Aluno aluno=negocioAluno.buscarLogin(loginAluno);
 
+		negocioBoletim.adicionarAvaliacao(aluno, disciplina, ano, nota1, nota2, nota3, nota4);
+	}
+	
+	public String visualizarBoletim(String loginAluno) {
+		Aluno aluno=negocioAluno.buscarLogin(loginAluno);
+		if(aluno!=null) {
+			return negocioBoletim.visualizarBoletim(aluno);
+		}
+		
+		return null;
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

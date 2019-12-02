@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sgedu.gui.controllers.AdicionarNotasController">
+   <children>
+      <Text layoutX="191.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicionar Notas">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Text>
+      <Button fx:id="btPesquisar" layoutX="118.0" layoutY="236.0" mnemonicParsing="false" onAction="#botaoPesquisa" text="Pesquisar" />
+      <Button fx:id="btVoltar" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#botaoVoltar" text="Voltar" />
+      <TextField fx:id="tfNome" layoutX="14.0" layoutY="154.0" promptText="Nome Turma" />
+      <TextField fx:id="tfAno" layoutX="14.0" layoutY="196.0" promptText="Ano" />
+      <Text layoutX="26.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pesquisa de turma">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <ListView fx:id="lvAlunos" layoutX="225.0" layoutY="99.0" prefHeight="275.0" prefWidth="200.0" />
+      <TextField fx:id="tfLogin" layoutX="441.0" layoutY="114.0" promptText="Login Aluno" />
+      <TextField fx:id="tf1Bimestre" layoutX="441.0" layoutY="156.0" promptText="1° Bimestre" />
+      <TextField fx:id="tf2Bimestre" layoutX="441.0" layoutY="198.0" promptText="2° Bimestre" />
+      <TextField fx:id="tf3Bimestre" layoutX="441.0" layoutY="238.0" promptText="3° Bimestre" />
+      <TextField fx:id="tf4Bimestre" layoutX="441.0" layoutY="279.0" promptText="4° Bimestre" />
+      <Button fx:id="btSalvarNotas" layoutX="458.0" layoutY="324.0" mnemonicParsing="false" onAction="#botaoSalvar" text="Salvar Notas" />
+      <Button fx:id="btFaltas1" layoutX="635.0" layoutY="154.0" mnemonicParsing="false" onAction="#botaoFaltas1" text="Faltas" />
+      <Button fx:id="btFaltas2" layoutX="635.0" layoutY="198.0" mnemonicParsing="false" onAction="#botaoFaltas2" text="Faltas" />
+      <Button fx:id="btFaltas3" layoutX="635.0" layoutY="238.0" mnemonicParsing="false" onAction="#botaoFaltas3" text="Faltas" />
+      <Button fx:id="btFaltas4" layoutX="635.0" layoutY="279.0" mnemonicParsing="false" onAction="#botaoFaltas4" text="Faltas" />
+      <Label fx:id="lbNotificacao" layoutX="26.0" layoutY="277.0" prefHeight="66.0" prefWidth="146.0" />
+   </children>
+</AnchorPane>

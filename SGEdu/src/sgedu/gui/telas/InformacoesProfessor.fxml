@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+   <children>
+      <Text layoutX="227.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informações">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Text>
+      <Text layoutX="114.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="117.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="83.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disciplina: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="110.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turma: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="lbNome" layoutX="182.0" layoutY="102.0" prefHeight="21.0" prefWidth="184.0" />
+      <Label fx:id="lbLogin" layoutX="180.0" layoutY="145.0" prefHeight="21.0" prefWidth="140.0" />
+      <Label fx:id="lbDisciplina" layoutX="182.0" layoutY="190.0" prefHeight="21.0" prefWidth="118.0" />
+      <Label fx:id="lbTurma" layoutX="182.0" layoutY="227.0" prefHeight="21.0" prefWidth="111.0" />
+   </children>
+</AnchorPane>

@@ -120,9 +120,7 @@ public class RepositorioAluno implements IRepositorioAluno{
 	 * @param objeto Aluno alterado
 	 */
 	public void alterarNomeAluno(Aluno aluno) throws IOException{ 
-		Aluno a = buscarAlunoLogin(aluno.getLogin());
-		
-		aluno.setNome(a.getNome());
+		buscarAlunoLogin(aluno.getLogin()).setNome(aluno.getNome());	
 		salvarArquivoAluno();
 	}
 	
@@ -131,9 +129,7 @@ public class RepositorioAluno implements IRepositorioAluno{
 	 * @param objeto Aluno alterado
 	 */
 	public void alterarSenhaAluno(Aluno aluno) throws IOException{ 
-		Aluno a = buscarAlunoLogin(aluno.getLogin());
-		
-		aluno.setSenha(a.getSenha());
+		buscarAlunoLogin(aluno.getLogin()).setSenha(aluno.getSenha());	
 		salvarArquivoAluno();
 	}
 	

@@ -130,14 +130,6 @@ public class Main extends Application {
 		System.out.println(coordenador.getLogin());
 		fachada.adicionarCoordenador(coordenador);
 		System.out.println(fachada.buscarLoginCoordenador("COORD0").getNome());
-		//////////
-		Disciplina matematica=new Disciplina("matematica",60);
-		Professor professor = new Professor("PROF0","arlindo", "123",matematica);
-		System.out.println(professor.getLogin());
-		matematica.setProfessor(professor);
-		fachada.adicionarProfessor(professor);
-		
-		/////////////////////
 		*/
 		
 		

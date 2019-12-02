@@ -47,11 +47,18 @@ public class AlterarDadosProfessorController {
     @FXML
     private ComboBox<String> cbTurma;
     
+    @FXML
+    private TextField tfNomeTurma;
+
+    @FXML
+    private TextField tfAno;
+
+    
     private ObservableList<String> obsDisciplinas;
     
     Fachada fachada=Fachada.criaObjeto();
     
-    private boolean achouAluno=false;
+    private boolean achou=false;
     
     @FXML
     void carregarLista() {
@@ -71,17 +78,33 @@ public class AlterarDadosProfessorController {
 
     @FXML
     void botaoAtualizar(ActionEvent event) {
-    	if(achouAluno) {
+    	if(achou) {
     		if(cbDisciplina.getSelectionModel().getSelectedItem()!=null) {
+    			int ano=strToInt(tfAno.getText(),0);
+    			
     			Professor professor=new Professor(tfLoginPesquisa.getText(),tfNome.getText(),tfSenha.getText(),fachada.buscarDisciplina(cbDisciplina.getSelectionModel().getSelectedItem()));	
     			fachada.alteraNomeProfessor(professor);
         		fachada.alterarSenhaProfessor(professor);
+        		fachada.alterarDisciplinaProfessor(tfLoginPesquisa.getText(), cbDisciplina.getSelectionModel().getSelectedItem());
+        		
+        		fachada.adicionaTurmaProfessor(tfLoginPesquisa.getText(), tfNomeTurma.getText(), ano);
     		}else {
     			lbNotificacao.setText("Selecione a disciplina");
     		} 		
     	}else {
     		lbNotificacao.setText("Pesquise por um login valido");
     	}
+    }
+    
+    /////metodo para converter string em int
+    public static int strToInt(String valor, int padrao) 
+    {
+       try {
+           return Integer.valueOf(valor); // Para retornar um Integer, use Integer.parseInt
+       } 
+       catch (NumberFormatException e) {  // Se houver erro na conversão, retorna o valor padrão
+           return padrao;
+       }
     }
 
     @FXML
@@ -90,11 +113,13 @@ public class AlterarDadosProfessorController {
     	Professor professor =fachada.buscarLoginProfessor(pesquisa);  
     	if(professor==null) {
     		lbNotificacao.setText("Login nao encontrado");
+    		achou=false;
     	}else {
     		tfNome.setText(professor.getNome());
     		tfSenha.setText(professor.getSenha());
+    		achou=true;
+    		}
     	}
-    }
 
     @FXML
     void botaoVoltar(ActionEvent event) {
