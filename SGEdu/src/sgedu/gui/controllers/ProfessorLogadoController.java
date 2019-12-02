@@ -32,17 +32,13 @@ public class ProfessorLogadoController {
 	    @FXML
 	    private Button btNotificacao;
 
-	    
-
-	    
-	    Fachada fachada=Fachada.criaObjeto();
-	    
+	    Fachada fachada=Fachada.criaObjeto();	    
 	    
 	    @FXML
 	    void botaoAdicionarNotas(ActionEvent event) {
 	    	try {
 				/////carregando a proxima tela
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("../telas/AdicionarNotas.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("../telas/BoletimController.fxml"));
 				Parent root = loader.load();
 			
 				

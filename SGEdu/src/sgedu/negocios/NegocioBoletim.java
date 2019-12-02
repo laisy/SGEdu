@@ -7,8 +7,15 @@ import sgedu.dados.diario.IRepositorioFrequencia;
 import sgedu.dados.turma.IRepositorioDisciplina;
 import sgedu.negocios.entidade.diario.Avaliacao;
 import sgedu.negocios.entidade.diario.Boletim;
+import sgedu.negocios.entidade.diario.Frequencia;
 import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Aluno;
+
+/**
+ * Class NegocioBoletim
+ * @author Allysson
+ * Classe Negocio Boletim gerencia as regras de negócios referente ao Boletim.
+ */
 
 public class NegocioBoletim {
 	
@@ -23,64 +30,34 @@ public class NegocioBoletim {
     }
     
     public void adicionarAvaliacao(Aluno aluno, Disciplina disciplina, int ano,double nota1,double nota2,double nota3,double nota4) {
-    	Avaliacao avaliacao=rAvaliacao.buscaAvaliacaoAluno(aluno, disciplina, ano);
-    	if(avaliacao==null) {
-    		Avaliacao novaAvaliacao=new Avaliacao(aluno,disciplina);
-    		
-    		
-    		
-    		if(nota1!=-1) {
-    			novaAvaliacao.setNota1(nota1);
+    	Avaliacao a = rAvaliacao.buscaAvaliacaoAluno(aluno, disciplina, ano);
+    	try{
+    		if(a == null) {
+	    		a = new Avaliacao(aluno, disciplina);
+	    		rAvaliacao.addAvaliacao(a);
+    		} 
+    		if(nota1 != -1) {
+    			a.setNota1(nota1);
+    		}
+    		if(nota2 != -1) {
+    			a.setNota2(nota2);
+    		}
+    		if(nota3 != -1) {
+    			a.setNota3(nota3);
+    		}
+    		if(nota4 != -1) {
+    			a.setNota4(nota4);
     		}
     		
-    		if(nota2!=-1) {
-    			novaAvaliacao.setNota2(nota2);
-    		}
-    		if(nota3!=-1) {
-    			novaAvaliacao.setNota3(nota3);
-    		}
-    		if(nota4!=-1) {
-    			novaAvaliacao.setNota4(nota4);
-    		}
+    		a.setMediaFinal();
+    		rAvaliacao.salvarArquivoAvaliacao();
     		
-    		novaAvaliacao.setMediaFinal();
+    		System.out.println(rAvaliacao.buscaAvaliacaoAluno(aluno, disciplina, ano));
     		
-    		System.out.println("////////////////////"+novaAvaliacao.toString());
-    		
-    		try {
-				rAvaliacao.addAvaliacao(novaAvaliacao);
-				
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-    	}else {
-    		
-    		if(nota1!=-1) {
-    			rAvaliacao.buscaAvaliacaoAluno(aluno, disciplina, ano).setNota1(nota1);
-    		}
-    		
-    		if(nota2!=-1) {
-    			rAvaliacao.buscaAvaliacaoAluno(aluno, disciplina, ano).setNota2(nota2);
-    		}
-    		if(nota3!=-1) {
-    			rAvaliacao.buscaAvaliacaoAluno(aluno, disciplina, ano).setNota3(nota3);
-    		}
-    		if(nota4!=-1) {
-    			rAvaliacao.buscaAvaliacaoAluno(aluno, disciplina, ano).setNota4(nota4);
-    		}
-    		
-    		
-    		rAvaliacao.buscaAvaliacaoAluno(aluno, disciplina, ano).setMediaFinal();
-    		
+    	} catch(IOException e) {
+    		System.out.println("Avaliacao não adicionada no arquivo!");
+		
     	}
-    	
-    	try {
-			rAvaliacao.salvarArquivoAvaliacao();
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-		}
-    	
     }
     
     public String visualizarBoletim(Aluno aluno) {
@@ -91,7 +68,42 @@ public class NegocioBoletim {
     	
     }
     
+    public void adicionarFrequencia(Aluno aluno,Disciplina disciplina, int ano, int bimestre) {
+    	
+    	Frequencia f = rFrequencia.buscaFrequenciaAluno(aluno, disciplina, ano);
+    	try {
+	    	if(f == null) {
+	    		f = new Frequencia(aluno, disciplina);
+				rFrequencia.addFrequencia(f);    		
+	    	}
+	    	
+			if(bimestre == 1) {
+				f.setFaltas1();
+				f.setFrequencia1();
+			}
+			if(bimestre == 2) {
+				f.setFaltas2();
+				f.setFrequencia2();
+			}
+			if(bimestre == 3) {
+				f.setFaltas3();
+				f.setFrequencia3();
+			}
+			if(bimestre == 4) {
+				f.setFaltas4();
+				f.setFrequencia4();
+			}
+			
+			f.setFaltasTotal();
+			f.setFrequenciaTotal();
+			rFrequencia.salvarArquivoFrequencia();
+			
+			System.out.println(rFrequencia.buscaFrequenciaAluno(aluno, disciplina, ano));
+			
+		} catch (IOException e) {
+			System.out.println("Frequencia não adicionada no arquivo!");
+		}
+    	
+    }
     
-	
-
 }

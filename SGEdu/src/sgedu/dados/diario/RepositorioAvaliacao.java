@@ -67,7 +67,6 @@ public class RepositorioAvaliacao implements IRepositorioAvaliacao{
 	 */
 	public Avaliacao buscaAvaliacaoAluno(Aluno aluno, Disciplina disciplina, int ano) {
 		for(int i=0; i<avaliacoes.size(); i++) {
-			System.out.println(avaliacoes.get(i));
 			
 			if(avaliacoes.get(i).getAluno().equals(aluno)){
 				Avaliacao a = avaliacoes.get(i);
@@ -85,6 +84,13 @@ public class RepositorioAvaliacao implements IRepositorioAvaliacao{
 		Avaliacao a = buscaAvaliacaoAluno(aluno, disciplina, ano);
 		avaliacoes.remove(a);
 		salvarArquivoAvaliacao();
+	}
+	
+	public void editarAvaliacao(Avaliacao ava) throws IOException {
+		Avaliacao a = buscaAvaliacaoAluno(ava.getAluno(), ava.getDisciplina(), ava.getAno());
+		a = ava;
+		salvarArquivoAvaliacao();
+		
 	}
 
 }

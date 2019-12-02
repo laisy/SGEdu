@@ -2,10 +2,15 @@ package sgedu.negocios;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import sgedu.dados.turma.IRepositorioDisciplina;
 import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Professor;
+
+/**
+ * Class NegocioDisciplina
+ * @author Allysson
+ * Classe Negocio Disciplina gerencia as regras de negócios referente a Disciplina.
+ */
 
 public class NegocioDisciplina {
 	

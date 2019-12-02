@@ -2,10 +2,15 @@ package sgedu.negocios;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import sgedu.dados.usuarios.IRepositorioAluno;
 import sgedu.negocios.entidade.usuarios.Aluno;
 import sgedu.negocios.excecoes.UsuarioJaCadastradoException;
+
+/**
+ * Class NegocioAluno
+ * @author Allysson
+ * Classe Negocio Aluno gerencia as regras de negócios referente a Aluno.
+ */
 
 public class NegocioAluno {
 	

@@ -1,12 +1,16 @@
 package sgedu.negocios;
 
 import java.io.IOException;
-
 import sgedu.dados.usuarios.IRepositorioCoordenador;
 import sgedu.negocios.entidade.usuarios.Aluno;
 import sgedu.negocios.entidade.usuarios.Coordenador;
 import sgedu.negocios.excecoes.UsuarioJaCadastradoException;
 
+/**
+ * Class NegocioCoordenador
+ * @author Allysson
+ * Classe Negocio Coordenador gerencia as regras de negócios referente a aluno.
+ */
 public class NegocioCoordenador {
 	
 	private IRepositorioCoordenador repositorio;

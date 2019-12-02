@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sgedu.gui.controllers.AlunoLogadoController">
    <children>
-      <Text layoutX="286.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SGEdu">
+      <Text layoutX="259.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SGEdu">
          <font>
             <Font name="System Bold" size="42.0" />
          </font>
@@ -24,5 +24,8 @@
             <Font size="20.0" />
          </font>
       </Label>
+      <Button fx:id="btBoletim" layoutX="255.0" layoutY="156.0" mnemonicParsing="false" onAction="#botaoBoletim" text="Visualizar Boletim" />
+      <Button fx:id="btNotificacoes" layoutX="272.0" layoutY="200.0" mnemonicParsing="false" onAction="#botaoNotificacoes" text="Notificações" />
+      <Button fx:id="btInformacoes" layoutX="272.0" layoutY="245.0" mnemonicParsing="false" onAction="#btInformacoes" text="Informações" />
    </children>
 </AnchorPane>

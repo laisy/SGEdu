@@ -27,4 +27,5 @@ public interface IRepositorioFrequencia {
 	
 	public void removerFrequencia(Aluno aluno, Disciplina disciplina, int ano) throws IOException;
 
+	void editarFrequencia(Frequencia freq) throws IOException;
 }

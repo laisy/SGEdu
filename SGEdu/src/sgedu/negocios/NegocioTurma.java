@@ -2,11 +2,16 @@ package sgedu.negocios;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import sgedu.dados.turma.IRepositorioTurma;
 import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.turma.Turma;
 import sgedu.negocios.entidade.usuarios.Aluno;
+
+/**
+ * Class NegocioTurma
+ * @author Allysson
+ * Classe Negocio Turma gerencia as regras de negócios referente a Turma.
+ */
 
 public class NegocioTurma {
 	

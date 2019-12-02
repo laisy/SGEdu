@@ -23,5 +23,7 @@ public interface IRepositorioAvaliacao {
 	Avaliacao buscaAvaliacaoAluno(Aluno aluno, Disciplina disciplina, int ano);
 	
 	void removerAvaliacao(Aluno aluno, Disciplina disciplina, int ano) throws IOException;
+	
+	void editarAvaliacao(Avaliacao ava) throws IOException;
 
 }

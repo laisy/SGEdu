@@ -1,34 +1,66 @@
 package sgedu.gui.controllers;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import sgedu.fachada.Fachada;
-import sgedu.main.Main;
+import sgedu.negocios.entidade.usuarios.Aluno;
 
-public class AlunoLogadoController  implements Initializable {
+public class AlunoLogadoController{
 
-    @FXML
+	@FXML
     private Button btVoltar;
-    
 
-    @FXML
-    private TextField tfNome;
     @FXML
     private Label lbNome;
 
-    
-    Fachada fachada=Fachada.criaObjeto();
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    @FXML
+    private Button btBoletim;
+
+    @FXML
+    private Button btNotificacoes;
+
+    @FXML
+    private Button btInformacoes;
+
+    @FXML
+    void botaoBoletim(ActionEvent event) {
+    	try {
+			/////carregando a proxima tela
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../telas/VisualizaBoletim.fxml"));
+			Parent root = loader.load();
+			
+			VisualizaBoletimController visualizaBoletimController=loader.getController();
+			
+			visualizaBoletimController.carregarLista();
+		
+			Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Visualiza boletim");
+            stage.show();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
+    	
+    }
+
+    @FXML
+    void botaoNotificacoes(ActionEvent event) {
+
+    }
+
+
+    @FXML
+    void btInformacoes(ActionEvent event) {
+
     }
 
     

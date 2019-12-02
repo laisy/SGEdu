@@ -7,6 +7,12 @@ import sgedu.negocios.entidade.usuarios.Aluno;
 import sgedu.negocios.entidade.usuarios.Responsavel;
 import sgedu.negocios.excecoes.UsuarioJaCadastradoException;
 
+
+/**
+ * Class NegocioResponsavel
+ * @author Allysson
+ * Classe Responsavel Aluno gerencia as regras de negócios referente a Responsavel.
+ */
 public class NegocioResponsavel {
 	
 	private IRepositorioResponsavel repositorio;

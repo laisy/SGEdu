@@ -15,7 +15,7 @@ import sgedu.negocios.entidade.turma.Turma;
 import sgedu.negocios.entidade.usuarios.Aluno;
 import sgedu.negocios.entidade.usuarios.Professor;
 
-public class AdicionarNotasController {
+public class BoletimController {
 
     @FXML
     private Button btPesquisar;
@@ -86,7 +86,7 @@ public class AdicionarNotasController {
        try {
            return Integer.valueOf(valor); // Para retornar um Integer, use Integer.parseInt
        } 
-       catch (NumberFormatException e) {  // Se houver erro na conversão, retorna o valor padrão
+       catch (NumberFormatException e) {  // Se houver erro na conversï¿½o, retorna o valor padrï¿½o
            return padrao;
        }
     }
@@ -97,28 +97,42 @@ public class AdicionarNotasController {
        try {
            return Double.valueOf(valor); // Para retornar um Integer, use Integer.parseInt
        } 
-       catch (NumberFormatException e) {  // Se houver erro na conversão, retorna o valor padrão
+       catch (NumberFormatException e) {  // Se houver erro na conversï¿½o, retorna o valor padrï¿½o
            return padrao;
        }
     }
     
     @FXML
     void botaoFaltas1(ActionEvent event) {
-
+    	int ano=strToInt(tfAno.getText(),0);
+		Professor professor=fachada.buscarLoginProfessor(fachada.getUsuarioLogado().getLogin());
+		System.out.println(professor.getDisciplina().getNome());
+    	fachada.adicionarFrequencia(tfLogin.getText(), professor.getDisciplina().getNome(), ano, 1);
+    	lbNotificacao.setText("Faltas adicionadas no 1 Bimestre");
     }
 
     @FXML
     void botaoFaltas2(ActionEvent event) {
-
+    	int ano=strToInt(tfAno.getText(),0);
+		Professor professor=fachada.buscarLoginProfessor(fachada.getUsuarioLogado().getLogin());
+    	fachada.adicionarFrequencia(tfLogin.getText(), professor.getDisciplina().getNome(), ano, 2);
+    	lbNotificacao.setText("Faltas adicionadas no 2 Bimestre");
     }
 
     @FXML
     void botaoFaltas3(ActionEvent event) {
-
+    	int ano=strToInt(tfAno.getText(),0);
+		Professor professor=fachada.buscarLoginProfessor(fachada.getUsuarioLogado().getLogin());
+    	fachada.adicionarFrequencia(tfLogin.getText(), professor.getDisciplina().getNome(), ano, 3);
+    	lbNotificacao.setText("Faltas adicionadas no 3 Bimestre");
     }
 
     @FXML
     void botaoFaltas4(ActionEvent event) {
+    	int ano=strToInt(tfAno.getText(),0);
+		Professor professor=fachada.buscarLoginProfessor(fachada.getUsuarioLogado().getLogin());
+    	fachada.adicionarFrequencia(tfLogin.getText(), professor.getDisciplina().getNome(), ano, 4);
+    	lbNotificacao.setText("Faltas adicionadas no 4 Bimestre");
 
     }
 
@@ -155,9 +169,8 @@ public class AdicionarNotasController {
     		double nota4=douToInt(tf4Bimestre.getText(),-1);
     		
     		
-    		fachada.adicionarBoletim(tfLogin.getText(),professor.getDisciplina(), ano, nota1, nota2, nota3, nota4);
+    		fachada.adicionarAvaliacao(tfLogin.getText(),professor.getDisciplina(), ano, nota1, nota2, nota3, nota4);
     		lbNotificacao.setText("Notas adicionadas");
-    		System.out.println(fachada.visualizarBoletim(tfLogin.getText()));
     		
     	}else {
     		lbNotificacao.setText("Insira um login valido");

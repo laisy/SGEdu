@@ -9,6 +9,11 @@ import sgedu.negocios.entidade.turma.Turma;
 import sgedu.negocios.entidade.usuarios.Professor;
 import sgedu.negocios.excecoes.UsuarioJaCadastradoException;
 
+/**
+ * Class NegocioProfessor
+ * @author Allysson
+ * Classe Negocio Professor gerencia as regras de negócios referente a Professor.
+ */
 public class NegocioProfessor {
 	
 	private IRepositorioProfessor repositorio;

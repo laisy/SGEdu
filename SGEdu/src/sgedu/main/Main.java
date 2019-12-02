@@ -1,19 +1,23 @@
 package sgedu.main;
 	
 import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sgedu.fachada.Fachada;
-import sgedu.negocios.entidade.turma.Disciplina;
-import sgedu.negocios.entidade.usuarios.Aluno;
-import sgedu.negocios.entidade.usuarios.Coordenador;
-import sgedu.negocios.entidade.usuarios.Professor;
-import sgedu.negocios.entidade.usuarios.Responsavel;
 import sgedu.negocios.excecoes.UsuarioJaCadastradoException;
+
+import sgedu.negocios.entidade.turma.Disciplina;
+import sgedu.negocios.entidade.usuarios.*;
+
+/**
+ * Class Main
+ * @author Allysson
+ * A classe Main extende de Application a partir da qual os aplicativos JavaFX se estendem.
+ * A classe Main instancia a fachada, e faz a integração do sistema com a GUI.
+ */
 
 public class Main extends Application {
 	
@@ -62,7 +66,6 @@ public class Main extends Application {
 		CoordenadorLogado=new Scene(FXMLCoordenadorLogado);
 		
 		
-		
 		stage.setScene(menu);
 		stage.show();		
 	}
@@ -104,36 +107,9 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) throws UsuarioJaCadastradoException, IOException, ClassNotFoundException {
-		
-		
-		
-		
+	
 		Fachada fachada=Fachada.criaObjeto();
 		
-		
-
-		/*
-		//////////usuarios testes///////////
-		Aluno aluno = new Aluno("ALUNO0","armando","123");
-		System.out.println(aluno.getLogin());
-		fachada.adicionarAluno(aluno);
-		
-		
-		//////////////////////
-		Responsavel responsavel=new Responsavel("RESP0","pai de allysson","123");
-		fachada.addAlunoEmResponsavel(responsavel, aluno);
-		fachada.adicionarReponsavel(responsavel);
-		System.out.println(responsavel.getLogin());
-
-		///////////
-		Coordenador coordenador = new Coordenador("COORD0","Jooj","123");
-		System.out.println(coordenador.getLogin());
-		fachada.adicionarCoordenador(coordenador);
-		System.out.println(fachada.buscarLoginCoordenador("COORD0").getNome());
-		*/
-		
-		
-	
 		
 		launch(args);
 	}

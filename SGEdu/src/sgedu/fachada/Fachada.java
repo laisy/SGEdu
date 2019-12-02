@@ -2,7 +2,6 @@ package sgedu.fachada;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import sgedu.dados.diario.IRepositorioAvaliacao;
 import sgedu.dados.diario.IRepositorioFrequencia;
 import sgedu.dados.diario.RepositorioAvaliacao;
@@ -35,7 +34,11 @@ import sgedu.negocios.entidade.usuarios.Responsavel;
 import sgedu.negocios.entidade.usuarios.Usuario;
 import sgedu.negocios.excecoes.UsuarioJaCadastradoException;
 
-
+/**
+ * Class Fachada
+ * @author Allysson
+ * A classe fachada faz a integração dos negócios com a GUI.
+ */
 public class Fachada {
 	private static Fachada objeto;
 	
@@ -291,7 +294,7 @@ public class Fachada {
 	
 	
 	/////////////////Boletim
-	public void adicionarBoletim(String loginAluno,Disciplina disciplina,int ano,double nota1, double nota2, double nota3, double nota4) {
+	public void adicionarAvaliacao(String loginAluno,Disciplina disciplina,int ano,double nota1, double nota2, double nota3, double nota4) {
 		Aluno aluno=negocioAluno.buscarLogin(loginAluno);
 
 		negocioBoletim.adicionarAvaliacao(aluno, disciplina, ano, nota1, nota2, nota3, nota4);
@@ -306,12 +309,12 @@ public class Fachada {
 		return null;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void adicionarFrequencia(String loginAluno,String nomeDisciplina,int ano,int bimestre) {
+		Aluno aluno=negocioAluno.buscarLogin(loginAluno);
+		Disciplina disciplina=negocioDisciplina.buscar(nomeDisciplina);
+		if(aluno!=null && disciplina!=null) {
+			negocioBoletim.adicionarFrequencia(aluno, disciplina, ano, bimestre);
+		}
+	}
+
 }

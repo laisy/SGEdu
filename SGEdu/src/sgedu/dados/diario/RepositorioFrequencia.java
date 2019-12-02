@@ -7,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+import sgedu.negocios.entidade.diario.Avaliacao;
 import sgedu.negocios.entidade.diario.Frequencia;
 import sgedu.negocios.entidade.turma.Disciplina;
 import sgedu.negocios.entidade.usuarios.Aluno;
@@ -68,8 +69,10 @@ public class RepositorioFrequencia implements IRepositorioFrequencia{
 	 */
 	public Frequencia buscaFrequenciaAluno(Aluno aluno, Disciplina disciplina, int ano) {
 		for(int i=0; i<frequencias.size(); i++) {
-			if(frequencias.get(i).getAluno().equals(aluno) && frequencias.get(i).getAno() == ano && frequencias.get(i).getDisciplina().equals(disciplina)) {
-				return frequencias.get(i);
+			if(frequencias.get(i).getAluno().equals(aluno)) {
+				if(frequencias.get(i).getAno() == ano && frequencias.get(i).getDisciplina().equals(disciplina)){
+					return frequencias.get(i);
+				}
 			}
 		}
 		return null;
@@ -93,6 +96,13 @@ public class RepositorioFrequencia implements IRepositorioFrequencia{
 	public void removerFrequencia(Aluno aluno, Disciplina disciplina, int ano) throws IOException {
 		Frequencia f = buscaFrequenciaAluno(aluno, disciplina, ano);
 		frequencias.remove(f);
+		salvarArquivoFrequencia();
+	}
+	
+	public void editarFrequencia(Frequencia freq) throws IOException {
+		Frequencia f = buscaFrequenciaAluno(freq.getAluno(), freq.getDisciplina(), freq.getAno());
+		//f = freq;
+		
 		salvarArquivoFrequencia();
 	}
 	
