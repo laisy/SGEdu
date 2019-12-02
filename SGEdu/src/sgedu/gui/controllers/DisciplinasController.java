@@ -59,7 +59,7 @@ public class DisciplinasController {
     	}else {
     		fachada.addProfessorTurma(tfNome2.getText(), tfProfessor.getText());
     		fachada.alterarDisciplinaProfessor(tfProfessor.getText(), tfNome2.getText());
-    		lbNotificacao.setText("Professor adicionado a turma");
+    		lbNotificacao.setText("Professor adicionado a disciplina");
     	}
     	
     	confirmar=true;
@@ -82,7 +82,7 @@ public class DisciplinasController {
        try {
            return Integer.valueOf(valor); // Para retornar um Integer, use Integer.parseInt
        } 
-       catch (NumberFormatException e) {  // Se houver erro na conversão, retorna o valor padrão
+       catch (NumberFormatException e) {  // Se houver erro na conversï¿½o, retorna o valor padrï¿½o
            return padrao;
        }
     }

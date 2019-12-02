@@ -129,7 +129,7 @@ public class RepositorioProfessor implements IRepositorioProfessor{
 	public void alterarNomeProfessor(Professor professor) throws IOException{ 
 		Professor p = buscarProfessorLogin(professor.getLogin());
 		
-		professor.setNome(p.getNome());
+		p.setNome(professor.getNome());
 		salvarArquivoProfessor();
 	}
 	

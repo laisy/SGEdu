@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sgedu.gui.controllers.ProfessorLogadoController">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sgedu.gui.controllers.ProfessorLogadoController">
    <children>
       <Text layoutX="286.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SGEdu">
          <font>
@@ -25,7 +25,7 @@
          </font>
       </Label>
       <Button fx:id="btInformacoes" layoutX="299.0" layoutY="213.0" mnemonicParsing="false" onAction="#botaoInformacoes" text="Informações" />
-      <Button fx:id="btAdicionarNotas" layoutX="288.0" layoutY="116.0" mnemonicParsing="false" onAction="#botaoAdicionarNotas" text="Adicionar notas" />
-      <Button fx:id="btNotificacao" layoutX="299.0" layoutY="169.0" mnemonicParsing="false" onAction="#botaoNotificacao" text="Notificações" />
+      <Button fx:id="btAdicionarNotas" layoutX="261.0" layoutY="116.0" mnemonicParsing="false" onAction="#botaoAdicionarNotas" text="Adicionar Apontamentos" />
+      <Button fx:id="btNotificacao" layoutX="299.0" layoutY="166.0" mnemonicParsing="false" onAction="#botaoNotificacao" text="Notificações" />
    </children>
 </AnchorPane>
