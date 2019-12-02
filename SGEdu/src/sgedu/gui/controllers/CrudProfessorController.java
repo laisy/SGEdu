@@ -47,7 +47,7 @@ public class CrudProfessorController {
                 alterarDadosProfessorController.carregarLista();
     			
     		} catch (IOException e) {
-    			e.printStackTrace();
+    			System.out.println("Erro");
     		}
 
     }
@@ -70,7 +70,7 @@ public class CrudProfessorController {
             cadastrarProfessorController.carregarLista();
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Erro");
 		}
     }
 
@@ -96,7 +96,7 @@ public class CrudProfessorController {
             stage.show();
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Erro");
 		}	
     }
 

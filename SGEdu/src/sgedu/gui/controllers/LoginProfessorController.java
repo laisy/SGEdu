@@ -71,7 +71,7 @@ public class LoginProfessorController {
                 	
          	}
          	}catch(IOException e) {
-				System.out.println(e);
+         		System.out.println("Erro");
 				
          	}
 

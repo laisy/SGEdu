@@ -106,7 +106,7 @@ public class BoletimController {
     void botaoFaltas1(ActionEvent event) {
     	int ano=strToInt(tfAno.getText(),0);
 		Professor professor=fachada.buscarLoginProfessor(fachada.getUsuarioLogado().getLogin());
-		System.out.println(professor.getDisciplina().getNome());
+		
     	fachada.adicionarFrequencia(tfLogin.getText(), professor.getDisciplina().getNome(), ano, 1);
     	lbNotificacao.setText("Faltas adicionadas no 1 Bimestre");
     }
@@ -156,13 +156,7 @@ public class BoletimController {
     	if(tfLogin.getText()!=null) {
     		int ano=strToInt(tfAno.getText(),0);
     		Professor professor=fachada.buscarLoginProfessor(fachada.getUsuarioLogado().getLogin());
-    		
-    		if(professor.getDisciplina()!=null) {
-    			System.out.println("User logado \n"+professor.getDisciplina().getNome());
-    		}else {
-    			System.out.println("DICIPLINA NULLLLLL");
-    		}
-    		
+    				
     		double nota1=douToInt(tf1Bimestre.getText(),-1);
     		double nota2=douToInt(tf2Bimestre.getText(),-1);
     		double nota3=douToInt(tf3Bimestre.getText(),-1);

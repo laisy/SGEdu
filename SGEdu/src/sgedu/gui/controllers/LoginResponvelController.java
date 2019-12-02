@@ -76,7 +76,7 @@ public class LoginResponvelController {
     		
 	    		System.out.println("Logou Responsavel");
     		}catch(IOException e) {
-				System.out.println(e);
+    			System.out.println("Erro");
 			}
     	}else {
     		Main.changeScreen("menu");

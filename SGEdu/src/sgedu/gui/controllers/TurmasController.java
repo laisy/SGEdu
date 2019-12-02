@@ -92,7 +92,7 @@ public class TurmasController {
            
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Erro");
 		}
     	
     }
@@ -103,7 +103,7 @@ public class TurmasController {
        try {
            return Integer.valueOf(valor); // Para retornar um Integer, use Integer.parseInt
        } 
-       catch (NumberFormatException e) {  // Se houver erro na conversão, retorna o valor padrão
+       catch (NumberFormatException e) {  // Se houver erro na conversï¿½o, retorna o valor padrï¿½o
            return padrao;
        }
     }

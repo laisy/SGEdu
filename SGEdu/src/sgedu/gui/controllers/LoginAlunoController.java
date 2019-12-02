@@ -87,7 +87,7 @@ public class LoginAlunoController implements Initializable {
             		System.out.println("falha no login");
             	}
 			} catch (IOException e) {
-				System.out.println(e);
+				System.out.println("Erro");
 			}
     }
     

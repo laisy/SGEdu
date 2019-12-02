@@ -67,7 +67,6 @@ public class AlterarDadosProfessorController {
     	
     	for(int i =0;i<dis.size();i++) {
     		disciplinas.add(dis.get(i).getNome());
-    		System.out.println(disciplinas.get(i));
     	}
     	
     	obsDisciplinas=FXCollections.observableArrayList(disciplinas);
@@ -102,7 +101,7 @@ public class AlterarDadosProfessorController {
        try {
            return Integer.valueOf(valor); // Para retornar um Integer, use Integer.parseInt
        } 
-       catch (NumberFormatException e) {  // Se houver erro na conversão, retorna o valor padrão
+       catch (NumberFormatException e) {  // Se houver erro na conversï¿½o, retorna o valor padrï¿½o
            return padrao;
        }
     }

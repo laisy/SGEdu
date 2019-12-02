@@ -66,13 +66,12 @@ public class RepositorioAvaliacao implements IRepositorioAvaliacao{
 	 * @return retorna a avaliacao buscada, caso nao encontre retorna null;
 	 */
 	public Avaliacao buscaAvaliacaoAluno(Aluno aluno, Disciplina disciplina, int ano) {
-		for(int i=0; i<avaliacoes.size(); i++) {
-			
-			if(avaliacoes.get(i).getAluno().equals(aluno)){
+		for(int i=0; i<avaliacoes.size(); i++) {	
+			if(avaliacoes.get(i).getAluno().getLogin().equals(aluno.getLogin())){
 				Avaliacao a = avaliacoes.get(i);
 				if(a.getAno() == ano) {
-					if(a.getDisciplina().equals(disciplina)) {
-						return avaliacoes.get(i);
+					if(a.getDisciplina().getNome().equals(disciplina.getNome())) {
+						return a;
 					}
 				}
 			}

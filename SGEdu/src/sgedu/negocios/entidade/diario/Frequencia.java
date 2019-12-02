@@ -148,12 +148,12 @@ public class Frequencia implements Serializable{
 
 	@Override
 	public String toString() {
-		return "DISCIPLINA: " + disciplina 
-				+ "\n" + " FALTAS 1ºBim: " + faltas1 + " FREQUENCIA 1ºBim: " + frequencia1
-				+ "\n" + " FALTAS 2ºBim: " + faltas2 + " FREQUENCIA 2ºBim: " + frequencia2 
-				+ "\n" + " FALTAS 3ºBim: " + faltas3 + " FREQUENCIA 3ºBim: " + frequencia3 
-				+ "\n" + " FALTAS 4ºBim: " + faltas4 + " FREQUENCIA 4ºBim: " + frequencia4
-				+ "\n" + " FALTAS TOTAL: " + faltasTotal + " FREQUENCIA TOTAL: " + frequenciaTotal;
+		return "DISCIPLINA: " + disciplina.getNome()
+				+ "\n" + " FALTAS 1ºBim: " + faltas1 + "\t" +" FREQUENCIA 1ºBim: " + frequencia1
+				+ "\n" + " FALTAS 2ºBim: " + faltas2 + "\t" +" FREQUENCIA 2ºBim: " + frequencia2 
+				+ "\n" + " FALTAS 3ºBim: " + faltas3 + "\t" +" FREQUENCIA 3ºBim: " + frequencia3 
+				+ "\n" + " FALTAS 4ºBim: " + faltas4 + "\t" +" FREQUENCIA 4ºBim: " + frequencia4
+				+ "\n" + " FALTAS TOTAL: " + faltasTotal + "\t" +" FREQUENCIA TOTAL: " + frequenciaTotal;
 	}
 	
 	

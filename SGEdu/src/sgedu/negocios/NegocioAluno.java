@@ -58,8 +58,7 @@ public class NegocioAluno {
 		try {
 			repositorio.alterarNomeAluno(aluno);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Nome não alterada!");
 		}
 	}
 	
@@ -67,8 +66,7 @@ public class NegocioAluno {
 		try {
 			repositorio.alterarSenhaAluno(aluno);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Senha não alterada!");
 		}
 	}
 	

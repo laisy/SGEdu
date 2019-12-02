@@ -46,7 +46,7 @@ public class CrudAlunoController {
             stage.show();
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Erro");
 		}
     }
 
@@ -63,7 +63,7 @@ public class CrudAlunoController {
             stage.show();
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Erro");
 		}
 
     }
@@ -82,7 +82,7 @@ public class CrudAlunoController {
             stage.show();
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Erro");
 		}	
     }
 
@@ -103,7 +103,7 @@ public class CrudAlunoController {
             stage.show();
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Erro");
 		}	
     	
     	

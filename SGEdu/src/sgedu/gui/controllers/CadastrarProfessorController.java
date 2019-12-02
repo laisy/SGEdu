@@ -55,9 +55,9 @@ public class CadastrarProfessorController {
 			lbNotificacao.setText("Professor cadastrado com sucesso");
     	} catch (UsuarioJaCadastradoException e) {
 			lbNotificacao.setText("Login ja existente");
-			e.printStackTrace();
+			System.out.println("Login ja existente");
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Nao salvo no arquivo");
 		}
     }
 
@@ -75,7 +75,6 @@ public class CadastrarProfessorController {
     	
     	for(int i =0;i<dis.size();i++) {
     		disciplinas.add(dis.get(i).getNome());
-    		System.out.println(disciplinas.get(i));
     	}
     	
     	obsDisciplinas=FXCollections.observableArrayList(disciplinas);

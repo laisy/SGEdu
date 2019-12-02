@@ -92,7 +92,7 @@ public class Fachada {
 			repositorioDisciplina.buscarArquivoDisciplina();
 			repositorioTurma.buscarArquivoTurma();
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Repositorios nao recuperados! ");
 		}
 		
 	

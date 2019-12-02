@@ -57,8 +57,9 @@ public class Boletim{
 
 	@Override
 	public String toString() {
-		return "Boletim " + ano+"\n" + aluno + "\n"
-				+ disciplinasBoletim;
+		return "Boletim " + ano 
+				+"\n" + aluno 
+				+ "\n" + disciplinasBoletim + "\n";
 	}
     
     

@@ -77,7 +77,7 @@ public class LoginCoordenadorController {
     		
 	    		System.out.println("Logou coordenador");
     		}catch(IOException e) {
-				System.out.println(e);
+    			System.out.println("Erro");
 			}
     	}else {
     		Main.changeScreen("menu");

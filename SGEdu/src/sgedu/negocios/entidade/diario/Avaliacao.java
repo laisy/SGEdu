@@ -98,7 +98,7 @@ public class Avaliacao implements Serializable{
 
 	@Override
 	public String toString() {
-		return "DISCIPLINA: " + disciplina 
+		return "DISCIPLINA: " + disciplina.getNome()
 				+ "\n" + " NOTA 1º Bim: " + nota1
 				+ "\n" + " NOTA 2º Bim: " + nota2 
 				+ "\n" + " NOTA 3º Bim: " + nota3 

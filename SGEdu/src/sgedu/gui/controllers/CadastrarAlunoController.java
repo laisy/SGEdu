@@ -47,9 +47,8 @@ public class CadastrarAlunoController {
 		try {
 			fachada.adicionarAluno(aluno);
 			lbConfimra.setText("Aluno Cadastrado");
-			System.out.println(aluno.getLogin());
 		} catch (ClassNotFoundException | IOException e) {
-			e.printStackTrace();
+			System.out.println("Erro");
 		}catch(UsuarioJaCadastradoException e) {
 			lbConfimra.setText("Login ja existente");
 		}

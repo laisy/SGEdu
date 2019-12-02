@@ -70,7 +70,7 @@ public class CoordenadorLogadoController {
            
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Erro");
 		}
 
     }
@@ -88,7 +88,7 @@ public class CoordenadorLogadoController {
             stage.show();
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Erro");
 		}
 		
 		
@@ -113,7 +113,7 @@ public class CoordenadorLogadoController {
             stage.show();
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Erro");
 		}
     }
 
@@ -149,7 +149,7 @@ public class CoordenadorLogadoController {
 	        stage.setTitle("Disciplina");
 	        stage.show();
     	}catch(IOException e) {
-			e.printStackTrace();
+    		System.out.println("Erro");
 		}
     }
 

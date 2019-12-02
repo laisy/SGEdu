@@ -59,8 +59,7 @@ package sgedu.negocios.entidade.diario;
 
 	@Override
 	public String toString() {
-		return " FREQUENCIA: " + frequencias + "\n" +
-				" AVALIACAO: " + avaliacoes + "\n" +
-				" SITUACAO: " + situacaoDisciplina + "\n";
+		return "\n" + "		FREQUENCIA: \n" + frequencias + "\n" +
+				"		AVALIACAO \n" + avaliacoes + "\n";
 	}
 }
